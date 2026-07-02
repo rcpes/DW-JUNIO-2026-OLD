@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+div{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+}
+

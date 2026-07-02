@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.padre {
+    width: 250px;
+    height: 250px;
+    background-color: blueviolet;
+    /* padding: 25px; */
+    border: 1px solid black;
+
+}
+
+.hijo {
+    width: 50%;
+    height: 50%;
+    background-color: rgb(0, 73, 231);
+    margin: 25% 25%;
+    border: 1px dotted black;
+
+}
+
+
+.hijo3 {
+    width: 50%;
+    height: 50%;
+    background-color: rgb(0, 73, 231);
+    margin: 0 auto;
+    border: 20px double black;
+
+
+}
+
+.hijo2 {
+    width: 50%;
+    height: 50%;
+    background-color: rgb(255, 9, 1);
+    margin: 0 auto;
+    border: 20px dotted black;
+
+}
+
+.ul1 {
+    padding: 20px;
+    margin: 20px;
+    list-style-type: "🤩";
+}
+
+.ul2 {
+    padding: 20px;
+    margin: 20px;
+    list-style-type: "😉";
+}
+
