@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: "Days One", sans-serif;
+    background-color: #f4f4f4;
+    color: #0e0e0e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+
+
+
+/* CABECERA DE LA WEB */
+
+header {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Days One", sans-serif;
+    border-bottom: 5px solid rgb(20, 2, 122);
+}
+
+
+
+h1 {
+    font-size: 2.5rem;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 -1px 4px #FFF,
+        0 -2px 10px rgb(255, 255, 255),
+        0 -2px 20px #ffffff,
+        0 -4px 40px rgb(255, 255, 255);
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+
+
+
+/* BOTONERA SUPERIOR */
+
+nav a:hover {
+    color: rgb(241, 241, 241);
+}
+
+nav a:active {
+    text-shadow: 0 -1px 4px #FFF,
+        0 -2px 10px rgb(107, 107, 106),
+        0 -10px 20px #0c0c0c,
+        0 -18px 40px rgb(155, 154, 154);
+}
+
+
+nav a.active:hover {
+    color: white;
+}
+
+
+/* FIN  BOTONERA SUPERIOR */
+
+
+
+
+/* CUERPO DE LA WEB */
+
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background-color: #3a3838;
+    color: white;
+}
+
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 -1px 4px #000000,
+        0 -2px 10px rgb(255, 255, 255),
+        0 -2px 20px #f3f3f3,
+        0 -4px 40px rgb(245, 245, 245);
+}
+
+
+main p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Allura", cursive;
+}
+
+
+/* FIN CUERPO DE LA WEB */
+
+
+
+
+
+
+
+/* IMAGEN CENTRAL  */
+
+main img {
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* PIE DE LA PAGINA  */
+
+
+
+footer {
+    background-color: #444444;
+    color: #ffffff;
+    text-align:right;
+    padding: 3%;
+    border-top: 5px solid rgb(245, 245, 245);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+ul.footer-lista {
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+}
+
+
+nav.footer-botonera a {
+    color: rgb(247, 247, 247);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+footer p.footer-botonera {
+    text-align:right;
+    text-align:left;
+}
+
+
