@@ -1,0 +1,348 @@
+/*=========================================================
+    RESET GENERAL
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/*=========================================================
+    BODY
+=========================================================*/
+
+body{
+
+    font-family: "Montserrat", sans-serif;
+    background:#f2f2f2;
+    color:#333;
+
+}
+
+
+/*=========================================================
+    CONTENEDOR GENERAL
+=========================================================*/
+
+.contenedor{
+
+    max-width:1200px;
+    margin:0 auto;
+    background:white;
+    min-height:100vh;
+
+}
+
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+header{
+
+    background:#111111;
+
+    border-bottom:5px solid #c8a94d;
+
+    padding:20px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+/*=========================================================
+    LOGO
+=========================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.logo img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+}
+
+
+.logo h1{
+
+    color:white;
+
+    font-size:2rem;
+
+    letter-spacing:2px;
+
+}
+
+
+/*=========================================================
+    MENÚ DE NAVEGACIÓN
+=========================================================*/
+
+nav ul{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+nav ul li{
+
+    list-style:none;
+
+}
+
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#2d2d2d;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+
+nav ul li a:hover{
+
+    background:#c8a94d;
+
+    color:#111111;
+
+}
+
+
+.activo{
+
+    background:#c8a94d !important;
+
+    color:#111111 !important;
+
+}
+
+
+/*=========================================================
+    CONTENIDO PRINCIPAL
+=========================================================*/
+
+main{
+
+    padding:40px;
+
+    text-align:center;
+
+}
+
+
+main h2{
+
+    font-size:2.3rem;
+
+    margin-bottom:30px;
+
+    color:#111111;
+
+}
+
+
+main p{
+
+    max-width:900px;
+
+    margin:25px auto;
+
+    text-align:justify;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+
+/*=========================================================
+    GALERÍA
+=========================================================*/
+
+table.galeria{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:40px auto;
+
+}
+
+
+table.galeria td{
+
+    padding:10px;
+
+    text-align:center;
+
+}
+
+
+table.galeria img{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    border:3px solid #c8a94d;
+
+}
+
+
+.imagen-principal{
+
+    width:100% !important;
+
+    max-width:900px;
+
+    height:450px !important;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+
+/*=========================================================
+    FOOTER
+=========================================================*/
+
+footer{
+
+    background:#222222;
+
+    color:white;
+
+    padding:30px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-top:5px solid #c8a94d;
+
+}
+
+
+.footer-contenido h3{
+
+    margin-bottom:8px;
+
+    font-size:1.5rem;
+
+}
+
+
+.footer-contenido p{
+
+    color:#d9d9d9;
+
+}
+
+
+/*=========================================================
+    REDES SOCIALES
+=========================================================*/
+
+.redes-sociales{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+.redes-sociales a{
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+
+.redes-sociales a:hover{
+
+    background:#c8a94d;
+
+}
+
+
+.redes-sociales img{
+
+    width:30px;
+
+    height:30px;
+
+    display:block;
+
+}
+
+
+/*=========================================================
+    COPYRIGHT
+=========================================================*/
+
+.copyright{
+
+    background:#111111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:15px;
+
+    font-size:14px;
+
+}
