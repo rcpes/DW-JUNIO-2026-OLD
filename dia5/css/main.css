@@ -8,7 +8,7 @@
 
 
 body {
-    font-family: "Days One", sans-serif;
+    
     background-color: #f4f4f4;
     color: #0e0e0e;
     display: flex;
@@ -29,7 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Days One", sans-serif;
+    
     border-bottom: 5px solid rgb(20, 2, 122);
 }
 
@@ -108,24 +108,64 @@ main h2 {
 
 
 main p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
+    font-size: 19px;
     background-color: #222;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: "Allura", cursive;
+    font-family: "Days One", sans-serif;
 }
 
 
 /* FIN CUERPO DE LA WEB */
 
 
+.galeria{
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+main img {
+    display: block;
+    margin: 2 auto;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta {
+    background: #191919;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+}
+
+.tarjeta:hover{
+    transform: translateY(-15px) scale(1.03);
+}
+
+
+.galeria-series {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 5px;
+}
 
 
 
+/* Convierte al contenedor en una cuadrícula   */
+.galeria {
+    display: grid;
+    /*  display: grid;: Convierte al contenedor en una cuadrícula. Los elementos se ordenan en filas y columnas como un tablero mágico */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));: Crea las columnas automáticamente. repeat(): Repite el patrón. auto-fit: Ajusta el número de columnas para que llenen todo el espacio disponible.  minmax(180px, 1fr): Las cajas medirán al menos 180 px. Si sobra espacio, las cajas se estiran para llenarlo (1 fr es una fracción del espacio libre) */
+    gap: 10px;
+    /*gap: 10px;: Deja un hueco de 10 px entre todas las filas y columnas. */
+}
 
 
 /* IMAGEN CENTRAL  */
