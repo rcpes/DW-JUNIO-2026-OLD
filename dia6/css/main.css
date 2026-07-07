@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Days One", sans-serif;
+  background-color: #f4f4f4;
+  color: #0e0e0e;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+header {
+  background-color: rgb(4, 34, 88);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Days One", sans-serif;
+  border-bottom: 5px solid rgb(14, 2, 85);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: rgb(185, 3, 3);
+  text-shadow: 0 -1px 4px #fafafa;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
+}
+
+nav a {
+  color: rgb(190, 188, 188);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* BOTONERA SUPERIOR */
+nav a:hover {
+  color: rgb(3, 124, 19);
+}
+
+nav a:active {
+  text-shadow: 0 -1px 4px #ffffff, 0 -2px 10px rgb(107, 107, 106), 0 -10px 20px #0c0c0c, 0 -18px 40px rgb(155, 154, 154);
+}
+
+main {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  background-color: #030000;
+  color: rgb(3, 124, 19);
+}/*# sourceMappingURL=main.css.map */
