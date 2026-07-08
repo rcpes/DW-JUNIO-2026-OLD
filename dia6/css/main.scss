@@ -1,110 +1,824 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
+/*=========================================================
+=            VARIABLES DE COLORES Y FUENTES              =
+=========================================================*/
+
+$color-fondo: #030303;
+$color-header: #08205f;
+$color-menu: #0b2468;
+$color-tarjeta: #102b73;
+$color-borde: #1b46b1;
+
+$color-texto: #ffffff;
+$color-titulo: #ffffff;
+$color-hover: #39d353;
+$color-secundario: #d8d8d8;
+$color-dorado: #ffd700;
+$color-sombra: rgba(0,0,0,.35);
+
+$fuente-principal: "Days One", sans-serif;
+
+
+/*=========================================================
+=                    RESET GENERAL                       =
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
+/*=========================================================
+=                      BODY                              =
+=========================================================*/
 
+body{
 
-// VARIALES DE COLORES  
+    font-family:$fuente-principal;
 
-$myColor: rgb(185, 3, 3);
-$myColormenu: rgb(190, 188, 188);
-$myColorSelec: rgb(3, 124, 19);
+    background:$color-fondo;
 
+    color:$color-texto;
 
+    min-height:100vh;
 
-body {
-    font-family: "Days One", sans-serif;
-    background-color: #f4f4f4;
-    color: #0e0e0e;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: space-between;
+    display:flex;
+
+    flex-direction:column;
+
 }
+
+
+/*=========================================================
+=                     HEADER                             =
+=========================================================*/
+
+header{
+
+    background:$color-header;
+
+    border-bottom:5px solid $color-borde;
+
+    padding:20px 30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+}
+
+
+/*=========================================================
+=                      LOGO                              =
+=========================================================*/
+
+.logo h1{
+
+    color:#ff2b2b;
+
+    font-size:2.4rem;
+
+    text-shadow:2px 2px 5px rgba(0,0,0,.6);
+
+}
+
+.logo h2{
+
+    margin-top:6px;
+
+    color:white;
+
+    font-size:1.1rem;
+
+}
+
+
+/*=========================================================
+=                 MENÚ PRINCIPAL                         =
+=========================================================*/
+
+header nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:25px;
+
+    align-items:center;
+
+}
+
+header nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1rem;
+
+    transition:.3s;
+
+}
+
+header nav a:hover{
+
+    color:$color-hover;
+
+}
+
+header nav a.active{
+
+    border-bottom:3px solid white;
+
+    padding-bottom:5px;
+
+}
+
+
+/*=========================================================
+=                 MENÚ SECUNDARIO                        =
+=========================================================*/
+
+.menu2{
+
+    margin-top:20px;
+
+    background:$color-menu;
+
+    border-radius:8px;
+
+    padding:12px;
+
+}
+
+.menu2 nav ul{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    list-style:none;
+
+    flex-wrap:wrap;
+
+}
+
+.menu2 nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.menu2 nav a:hover{
+
+    color:$color-hover;
+
+}
+
+
+/*=========================================================
+=                      MAIN                              =
+=========================================================*/
+
+main{
+
+    flex:1;
+
+    padding:20px;
+
+}
+
+
+/*=========================================================
+=             CONTENEDOR DE LAS COLUMNAS                 =
+=========================================================*/
+
+.listas{
+
+    margin-top:20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:20px;
+
+}
+
+
+/*=========================================================
+=                  TARJETAS                              =
+=========================================================*/
+
+.columna{
+
+    background:$color-tarjeta;
+
+    border:1px solid $color-borde;
+
+    border-radius:10px;
+
+    padding:20px;
+
+    box-shadow:0 6px 15px $color-sombra;
+
+    transition:.35s;
+
+    animation:aparecer .6s ease;
+
+}
+
+
+/*=========================================================
+=            EFECTO SOBRE LAS TARJETAS                   =
+=========================================================*/
+
+.columna:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 30px rgba(0,0,0,.5);
+
+}
+
+
+/*=========================================================
+=              TÍTULOS DE TARJETAS                       =
+=========================================================*/
+
+.columna h3{
+
+    color:$color-titulo;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+    text-shadow:0 0 8px rgba(255,255,255,.4);
+
+}
+
+/*=========================================================
+=                LISTAS UL Y OL                          =
+=========================================================*/
+
+.columna ul,
+.columna ol{
+
+    padding-left:25px;
+
+    line-height:2;
+
+}
+
+
+/*=========================================================
+=                ELEMENTOS <LI>                          =
+=========================================================*/
+
+.columna li{
+
+    color:$color-texto;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+/*=========================================================
+=            EFECTO SOBRE LOS <LI>                       =
+=========================================================*/
+
+.columna li:hover{
+
+    color:$color-hover;
+
+    transform:translateX(8px);
+
+}
+
+
+/*=========================================================
+=             LISTA SIMPLE (DIV)                         =
+=========================================================*/
+
+.lista-simple{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+.lista-simple div{
+
+    background:rgba(255,255,255,.08);
+
+    padding:10px;
+
+    border-radius:6px;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+
+.lista-simple div:hover{
+
+    background:rgba(255,255,255,.18);
+
+    color:$color-hover;
+
+    transform:translateX(8px);
+
+}
+
+
+/*=========================================================
+=             LISTA DESCRIPTIVA <DL>                     =
+=========================================================*/
+
+.columna dl{
+
+    margin-top:10px;
+
+}
+
+
+.columna dt{
+
+    font-weight:bold;
+
+    color:$color-dorado;
+
+    margin-top:15px;
+
+    margin-bottom:6px;
+
+    transition:.3s;
+
+}
+
+
+.columna dt:hover{
+
+    color:$color-hover;
+
+}
+
+
+.columna dd{
+
+    margin-left:20px;
+
+    margin-bottom:15px;
+
+    line-height:1.5;
+
+    font-size:14px;
+
+    color:$color-texto;
+
+}
+
+
+.columna dd:hover{
+
+    color:$color-secundario;
+
+}
+
+
+/*=========================================================
+=                  PÁRRAFOS                              =
+=========================================================*/
+
+main p{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:white;
+
+}
+
+
+/*=========================================================
+=                      FOOTER                            =
+=========================================================*/
+
+footer{
+
+    background:$color-header;
+
+    border-top:5px solid $color-borde;
+
+    padding:20px 30px;
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+
+/*=========================================================
+=             TÍTULO DEL FOOTER                          =
+=========================================================*/
+
+.footer-botonera{
+
+    color:white;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+/*=========================================================
+=             MENÚ DEL FOOTER                            =
+=========================================================*/
+
+.footer-lista{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.footer-lista a{
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+.footer-lista a:hover{
+
+    color:$color-hover;
+
+}
+
+
+/*=========================================================
+=            COPYRIGHT DEL FOOTER                        =
+=========================================================*/
+
+footer > p{
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+
+/*=========================================================
+=                 ANIMACIÓN                              =
+=========================================================*/
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=========================================================
+=                RESPONSIVE 1200px                       =
+=========================================================*/
+
+@media(max-width:1200px){
+
+    .listas{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+
+/*=========================================================
+=                 RESPONSIVE 768px                       =
+=========================================================*/
+
+@media(max-width:768px){
+
+    header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:20px;
+
+    }
+
+    header nav ul{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .menu2 nav ul{
+
+        gap:15px;
+
+    }
+
+    .listas{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    footer{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
+
+/*=========================================================
+=                 RESPONSIVE 500px                       =
+=========================================================*/
+
+@media(max-width:500px){
+
+    .listas{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .logo h1{
+
+        font-size:2rem;
+
+    }
+
+    .logo h2{
+
+        font-size:1rem;
+
+    }
+
+    .columna{
+
+        padding:18px;
+
+    }
+
+}
+
+
+/*=========================================================
+=             CLASES REUTILIZABLES                       =
+=========================================================*/
+
+.texto-centro{
+
+    text-align:center;
+
+}
+
+.texto-izquierda{
+
+    text-align:left;
+
+}
+
+.texto-derecha{
+
+    text-align:right;
+
+}
+
+
+.mt-10{
+
+    margin-top:10px;
+
+}
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mb-10{
+
+    margin-bottom:10px;
+
+}
+
+.mb-20{
+
+    margin-bottom:20px;
+
+}
+
+.mb-30{
+
+    margin-bottom:30px;
+
+}
+
+
+/*=========================================================
+=                FIN DEL ARCHIVO                         =
+=========================================================*/
+
+
+
+
+/*=========================================================
+=          DESPLAZAMIENTO SUAVE ENTRE SECCIONES           =
+=========================================================*/
+
+html {
+
+    /* Hace que el desplazamiento hacia las anclas sea suave */
+    scroll-behavior: smooth;
+
+}
+
+
+/*=========================================================
+=           MENÚ SECUNDARIO FIJO (STICKY MENU)            =
+=========================================================*/
+
+.menu2 {
+
+    /* El menú se comporta normalmente hasta llegar arriba */
+    position: sticky;
+
+    /* Se queda pegado al borde superior */
+    top: 0;
+
+    /* Siempre queda por encima de las imágenes */
+    z-index: 1000;
+
+    /* Mantiene el color de fondo */
+    background-color: #102a72;
+
+    /* Conserva el espacio interno */
+    padding: 12px;
+
+    /* Mantiene las esquinas redondeadas */
+    border-radius: 8px;
+
+    /* Separa el menú del contenido inferior */
+    margin-bottom: 30px;
+
+    /* Sombra para dar efecto de profundidad */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .35);
+
+}
+
+
+/*=========================================================
+=     EVITA QUE LOS TÍTULOS QUEDEN OCULTOS POR EL MENÚ    =
+=========================================================*/
+
+section {
+
+    /* Deja un espacio cuando se navega mediante anclas */
+    scroll-margin-top: 90px;
+
+}
+
+
+/*=========================================================
+=             EFECTO SOBRE LOS BOTONES DEL MENÚ           =
+=========================================================*/
+
+.menu2 a {
+
+    transition: all .3s ease;
+
+}
+
+
+.menu2 a:hover {
+
+    color: $color-hover;
+
+}
+
+
+/*=========================================================
+=      SOMBRA AL MENÚ CUANDO ESTÁ FIJO EN PANTALLA        =
+=========================================================*/
+
+.menu2:hover {
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .45);
+
+}
+
+
 
 
 header {
-    background-color: rgb(4, 34, 88);
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Days One", sans-serif;
-    border-bottom: 5px solid rgb(14, 2, 85);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1100;
+
 }
 
 
+// Para que el desplazamiento sea suave
+html{
 
-h1 {
-    font-size: 2.5rem;
-    color: $myColor;
-    text-shadow: 0 -1px 4px #fafafa,
-    //     0 -2px 10px rgb(255, 255, 255),
-    //     0 -2px 20px #ffffff,
-    //     0 -4px 40px rgb(255, 255, 255);
+    scroll-behavior: smooth;
+
 }
 
-ul {
-    display: flex;
-    list-style-type: none;
-    gap: 10px;
-    
+// Y para que el menú fijo no tape el título:
+
+section{
+
+    scroll-margin-top: 100px;
+
 }
-
-
-// COLOR DE LE TRAS DE MENU SUPERIOR
-nav a {
-    color: $myColormenu;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-
-/* BOTONERA SUPERIOR */
-
-// COLOR DE MENU AL PASAR EL PUNTERO
-nav a:hover {
-    color:$myColorSelec;
-}
-
-
-// EFECTO AL SER SELECCIONADO
-nav a:active {
-    text-shadow: 0 -1px 4px #ffffff,
-        0 -2px 10px rgb(107, 107, 106),
-        0 -10px 20px #0c0c0c,
-        0 -18px 40px rgb(155, 154, 154);
-}
-
-
-
-// centrado tamaño centrado color de fondo y color de seleccion 
-main {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    background-color: #030000;
-    color: $myColorSelec;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

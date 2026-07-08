@@ -1,132 +1,287 @@
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="es">
 
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>dia5</title>
+
+    <!-- ========================================= -->
+    <!-- CONFIGURACIÓN DE LA PÁGINA -->
+    <!-- ========================================= -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tienda de Auto Partes</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Days+One&display=swap" rel="stylesheet">
 
+    <!-- Icono -->
     <link rel="shortcut icon" href="images/cropped-favicon-180x180.webp">
-    <link rel='stylesheet' href='css/main.css'>
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- JavaScript -->
     <script src="js/main.js" defer></script>
+
 </head>
 
 <body>
 
+    <!-- ========================================= -->
+    <!-- CABECERA -->
+    <!-- ========================================= -->
 
-    <!-- CABECERA DE LA WEB -->
     <header>
 
         <div class="logo">
+
             <h1>Tienda de Auto Partes</h1>
-            <h2>Motors Parts Distrubuidos de Auto Partes</h2>
+
+            <h2>Motors Parts Distribuidores de Auto Partes</h2>
+
         </div>
 
-
         <nav>
+
             <ul>
+
                 <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="biografia.html">Empresa</a></li>
-                <li><a href="discografia.html">Tiendas</a></li>
-                <li><a href="videos.html">Contactanos</a></li>
+
+                <li><a href="empresa.html">Empresa</a></li>
+
+                <li><a href="tiendas.html">Tiendas</a></li>
+
+                <li><a href="contactanos.html">Contáctanos</a></li>
+
             </ul>
+
         </nav>
 
     </header>
 
-
-
-    <!-- TODO LO QUE TIENE EL CUERPO DE LA WEB -->
+    <!-- ========================================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================================= -->
 
     <main>
 
+        <!-- ========================================= -->
+        <!-- MENÚ SECUNDARIO -->
+        <!-- ========================================= -->
 
         <div class="menu2">
+
             <nav>
+
                 <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="biografia.html">Rodamientos</a></li>
-                    <li><a href="discografia.html">Suspension</a></li>
-                    <li><a href="galeria.html">Motor</a></li>
-                    <li><a href="videos.html">Electricidad</a></li>
+
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index2.html#rodamientos">Rodamientos</a></li>
+                    <li><a href="index2.html#suspension">Suspensión</a></li>
+                    <li><a href="index2.html#motor">Motor</a></li>
+                    <li><a href="index2.html#electricidad">Electricidad</a></li>
+
                 </ul>
+
             </nav>
 
         </div>
 
+        <!-- ========================================= -->
+        <!-- EJEMPLOS DE LISTAS HTML -->
+        <!-- ========================================= -->
 
+        <section class="listas">
 
+            <!-- ========================= -->
+            <!-- COLUMNA 1 -->
+            <!-- UL -->
+            <!-- ========================= -->
 
+            <div class="columna">
 
+                <h3>Lista &lt;ul&gt;</h3>
 
+                <ul>
+
+                    <li>Carrocería</li>
+                    <li>Rodamientos</li>
+                    <li>Lubricantes</li>
+                    <li>Frenos</li>
+                    <li>Suspensión</li>
+                    <li>Motor</li>
+
+                </ul>
+
+            </div>
+
+            <!-- ========================= -->
+            <!-- COLUMNA 2 -->
+            <!-- UL -->
+            <!-- ========================= -->
+
+            <div class="columna">
+
+                <h3>Lista &lt;ul&gt;</h3>
+
+                <ul>
+
+                    <li>Baterías</li>
+                    <li>Aceites</li>
+                    <li>Filtros</li>
+                    <li>Radiadores</li>
+                    <li>Bombas</li>
+                    <li>Alternadores</li>
+
+                </ul>
+
+            </div>
+
+            <!-- ========================= -->
+            <!-- COLUMNA 3 -->
+            <!-- Lista Simple -->
+            <!-- ========================= -->
+
+            <div class="columna">
+
+                <h3>Lista Simple</h3>
+
+                <div class="lista-simple">
+
+                    <div>Radiador</div>
+                    <div>Alternador</div>
+                    <div>Bomba de Agua</div>
+                    <div>Correa</div>
+                    <div>Bujías</div>
+                    <div>Amortiguadores</div>
+
+                </div>
+
+            </div>
+
+            <!-- ========================= -->
+            <!-- COLUMNA 4 -->
+            <!-- OL -->
+            <!-- ========================= -->
+
+            <div class="columna">
+
+                <h3>Lista &lt;ol&gt;</h3>
+
+                <ol>
+
+                    <li>Buscar producto</li>
+                    <li>Seleccionar cantidad</li>
+                    <li>Agregar al carrito</li>
+                    <li>Realizar pago</li>
+                    <li>Confirmar compra</li>
+
+                </ol>
+
+            </div>
+
+            <!-- ========================= -->
+            <!-- COLUMNA 5 -->
+            <!-- DL -->
+            <!-- ========================= -->
+
+            <div class="columna">
+
+                <h3>Lista &lt;dl&gt;</h3>
+
+                <dl>
+
+                    <dt>Motor</dt>
+
+                    <dd>
+                        Sistema principal encargado de mover el vehículo.
+                    </dd>
+
+                    <dt>Radiador</dt>
+
+                    <dd>
+                        Enfría el motor evitando el sobrecalentamiento.
+                    </dd>
+
+                    <dt>Batería</dt>
+
+                    <dd>
+                        Proporciona energía al sistema eléctrico.
+                    </dd>
+
+                    <dt>Filtro de Aceite</dt>
+
+                    <dd>
+                        Elimina impurezas del aceite del motor.
+                    </dd>
+
+                </dl>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================= -->
+        <!-- INFORMACIÓN -->
+        <!-- ========================================= -->
 
         <p>
 
-
+            Esta página muestra los diferentes tipos de listas disponibles en HTML.
+            Cada columna representa una estructura distinta para organizar información,
+            permitiendo comparar visualmente el funcionamiento de las etiquetas
+            <strong>&lt;ul&gt;</strong>,
+            <strong>&lt;ol&gt;</strong> y
+            <strong>&lt;dl&gt;</strong>.
 
         </p>
-
-
-
-
-
-        <!-- <img src="images/images1.jpg" alt="Michael Jackson"> -->
-
-        <p>
-            Nacido en el seno de una familia numerosa, Michael fue impulsado por su padre hacia la música desde muy
-            pequeño.
-            Tras triunfar con sus hermanos, inició su carrera en solitario, consolidándose como una leyenda tras
-            asociarse con
-            el productor Quincy Jones para lanzar álbumes como Off the Wall y Thriller, el cual sigue siendo el disco
-            más vendido
-            de la historia
-        </p>
-
 
     </main>
 
-
-    <!-- EL PIE DE LA WEB -->
+    <!-- ========================================= -->
+    <!-- PIE DE PÁGINA -->
+    <!-- ========================================= -->
 
     <footer>
+
         <div>
 
-            <P class="footer-botonera"> Michael Jackson</P>
-            <nav class="footer-botonera">
+            <p class="footer-botonera">
+
+                Tienda de Auto Partes
+
+            </p>
+
+            <nav>
+
                 <ul class="footer-lista">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="biografia.html">Biografía</a></li>
-                    <li><a href="discografia.html">Discografía</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="videos.html">Videos</a></li>
+
+                    <li><a href="index.html">Inicio</a></li>
+
+                    <li><a href="empresa.html">Empresa</a></li>
+
+                    <li><a href="tiendas.html">Tiendas</a></li>
+
+                    <li><a href="contactanos.html">Contáctanos</a></li>
+
                 </ul>
+
             </nav>
 
-
         </div>
-        <p>&copy; 2024 Página de Michael Jackson Todos los derechos reservados.</p>
 
+        <p>
 
+            &copy; 2024 Tienda de Auto Partes.
+            Todos los derechos reservados.
 
-
-
+        </p>
 
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 
