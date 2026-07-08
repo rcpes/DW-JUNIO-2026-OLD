@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación del Proyecto - CINE HD</title>
+
+
+    <link rel="shortcut icon" href="images/favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
+
+
+</head>
+
+<body>
+
+    <div>
+        <h2>Documentación del Proyecto: CINE HD</h2>
+
+    </div>
+
+
+    <div class="container">
+        
+
+        <p>
+
+        </p>
+
+        <!-- SECCIÓN 1 -->
+        <section>
+            <h2>1. Descripción de las Secciones de la Página</h2>
+            <p>La página web <strong>CINE HD</strong> es una plataforma de streaming o catálogo multimedia que se divide
+                en las siguientes secciones clave:</p>
+            <ul>
+                <li><strong>Cabecera (Header):</strong> Contiene el logotipo de la marca alineado a la izquierda con un
+                    diseño tipográfico imponente y un menú de navegación (Nav) a la derecha con enlaces a <em>Inicio,
+                        Películas, Series</em> y <em>TV Online</em>.</li>
+                <li><strong>Banner Principal (Portada):</strong> Un elemento visual a lo ancho de la pantalla que
+                    muestra una imagen destacada promocional (en la captura, una ilustración de Superman).</li>
+                <li><strong>Bloque de Series Recientes:</strong> Una galería cuadriculada que expone tarjetas con las
+                    portadas, títulos y años de lanzamiento de producciones como <em>Cabo de Miedo, Silo, Sugar</em>,
+                    entre otras.</li>
+                <li><strong>Bloque de Películas Recientes:</strong> Una cuadrícula gemela dedicada al formato
+                    cinematográfico que lista estrenos recientes organizados simétricamente.</li>
+                <li><strong>Barra de Mensaje y Pie de Página (Footer):</strong> Un banner inferior de texto que invita a
+                    descubrir contenido online, seguido por los créditos de derechos reservados sobre un fondo rojo
+                    sólido.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 2 -->
+        <section>
+            <h2>2. Aspectos Visuales Generales</h2>
+            <p>El diseño de la aplicación web adopta la estética oscura o <em>"Dark Mode"</em>, altamente optimizada
+                para plataformas de entretenimiento multimedia nocturno:</p>
+            <ul>
+                <li><strong>Paleta de Colores:</strong> Predomina el negro puro (<code>#060606</code>) de fondo y grises
+                    oscuros (<code>#191919</code>) en tarjetas, usando el <strong>Rojo</strong> corporativo
+                    (<code>#ba0000</code>) como color de acento vibrante en el footer, bordes de títulos y estados
+                    interactivos.</li>
+                <li><strong>Tipografía y Efectos:</strong> Se implementa la familia de fuentes <em>Arial / Arial
+                        Black</em> combinada con sombras de texto (<code>text-shadow</code>) que facilitan la
+                    legibilidad sobre fondos oscuros.</li>
+                <li><strong>Interactividad Visual:</strong> Las tarjetas cuentan con un efecto de transformación al
+                    pasar el cursor (<code>hover</code>), elevándose suavemente mediante <code>translateY(-8px)</code> y
+                    aumentando su sombra paralela para crear sensación de profundidad.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 3 -->
+        <section>
+            <h2>3. Organización del Proyecto (Estructura de Archivos)</h2>
+            <p>Según el espacio de trabajo actual, el proyecto está estructurado de manera limpia y modular bajo el
+                directorio raíz <code>dia7/</code>:</p>
+            <div class="folder-structure">
+                dia7/<br>
+                ├── css/<br>
+                │ ├── main.css <span class="badge">Compilado</span><br>
+                │ ├── main.css.map<br>
+                │ └── main.scss <span class="badge">Código Fuente</span><br>
+                ├── images/<br>
+                │ ├── [Todas las portadas .jpg/webp]<br>
+                │ └── C30251.jpg (Banner)<br>
+                ├── js/<br>
+                │ └── main.js<br>
+                └── index.html
+            </div>
+            <p>Se destaca el uso del preprocesador <strong>SASS (.scss)</strong>, el cual centraliza los estilos antes
+                de ser compilados a un archivo CSS plano legible por el navegador.</p>
+        </section>
+
+        <!-- SECCIÓN 4 -->
+        <section>
+            <h2>4. Técnicas de Maquetación y Diseño Responsive</h2>
+            <p>El proyecto implementa soluciones modernas de CSS moderno para asegurar flexibilidad:</p>
+            <ul>
+                <li><strong>Flexbox:</strong> Utilizado en la barra de navegación para distribuir los ítems del menú de
+                    forma horizontal de manera equidistante empleando la propiedad <code>display: flex</code> y un
+                    espaciado controlado mediante <code>gap: 1rem</code>.</li>
+                <li><strong>CSS Grid (Diseño Adaptativo):</strong> La galería multimedia está construida sobre un
+                    sistema de rejilla fluida: <br>
+                    <code>grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));</code><br>
+                    Esto permite que el diseño sea 100% <strong>responsive</strong>; las tarjetas se reordenarán y
+                    expandirán automáticamente dependiendo de si el usuario visualiza la web desde un smartphone, tablet
+                    o pantalla de escritorio sin romper la estructura.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 5 -->
+        <section>
+            <h2>5. Reutilización de Componentes y Estilos</h2>
+            <p>Para optimizar el código y evitar la redundancia, se han tomado decisiones arquitectónicas eficientes:
+            </p>
+            <ul>
+                <li><strong>Clases Clon:</strong> El bloque de películas y el bloque de series comparten exactamente las
+                    mismas clases estructurales (<code>.series</code> y <code>.galeria-series</code>). Esto garantiza
+                    que cualquier cambio visual afecte equitativamente a ambos bloques sin duplicar código CSS.</li>
+                <li><strong>Tarjetas Modulares:</strong> La clase <code>.tarjeta</code> actúa como un componente
+                    agnóstico; no le importa si contiene información de una película o serie, recicla de forma idéntica
+                    las dimensiones de imagen, paddings y transiciones.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN GITHUB -->
+        <section style="text-align: center;">
+            <h2>Repositorio del Proyecto</h2>
+            <p>Puedes examinar el código fuente actualizado, el historial de confirmaciones y el despliegue del sitio en
+                el siguiente enlace:</p>
+            <a href="https://github.com/rcpes/DW-JUNIO-2026" target="_blank" class="github-btn">🔗 Ver en GitHub</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Presentación CINE-HD. REGRESAR A LA WBB <a href="index.html">Pulse Aqui.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
