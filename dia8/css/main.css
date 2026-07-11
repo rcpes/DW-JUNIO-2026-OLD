@@ -187,10 +187,19 @@ footer {
   border: 5px solid rgb(255, 0, 0);
 }
 
+.videos__iten--amarillo {
+  border: 5px solid rgb(240, 228, 1);
+}
+
+.videos__iten--azul {
+  border: 5px solid rgb(2, 65, 191);
+}
+
 .mapa {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 20px;
+  border: 5px solid rgb(0, 23, 226);
 }
 
 .mapa__cei {
@@ -199,5 +208,5 @@ footer {
 }
 
 .mapa__cei--border {
-  border: 5px solid rgb(0, 23, 226);
+  border: 55px solid rgb(0, 23, 226);
 }/*# sourceMappingURL=main.css.map */
