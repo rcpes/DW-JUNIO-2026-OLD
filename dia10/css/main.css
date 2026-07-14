@@ -34,12 +34,55 @@ p {
 
 
 
+
+
+
+
+
+
+/* ==========================================================================
+   CAMBIO DE COLOR SEGÚN EL RANGO ACTIVO DE CLAMP()
+   ========================================================================== */
+
+/* 1. ESTADO INTERMEDIO (Valor preferido: 4vw) -> COLOR AZUL
+   Este será el color por defecto de la fuente. */
+.fluid-title {
+    /* H1 con font-size responsivo usando clamp */
+  font-size: clamp(1.0rem, 4vw, 4rem);
+  color: #0077ff; /* Azul para cuando la fuente escala dinámicamente */
+  transition: color 0.3s ease; /* Transición suave para los cambios de color */
+}
+
+/* 2. LÍMITE INFERIOR (Pantallas <= 400px, donde clamp aplica 1.0rem) -> COLOR AMARILLO
+   Calculado porque 4% de 400px es 16px (1.0rem) */
+@media (max-width: 400px) {
+  .fluid-title {
+    color: #ffcc00; /* Amarillo */
+  }
+}
+
+/* 3. LÍMITE SUPERIOR (Pantallas >= 1600px, donde clamp aplica 4rem) -> COLOR ROJO
+   Calculado porque 4% de 1600px es 64px (4rem) */
+@media (min-width: 1600px) {
+  .fluid-title {
+    color: #ff3333; /* Rojo */
+  }
+}
+
+
+/* ========================    FIN  =================== */
+
+
+
+
+
+
+
 h1 {
     font-family: 'Arial', sans-serif;
     font-size: 15px;
     font-weight: bold;
     font-style: italic;
-    font-variant: small-caps;
     line-height: 1.5;
     font-stretch: condensed;
     width: 50%;

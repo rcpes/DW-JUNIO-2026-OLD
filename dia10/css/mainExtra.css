@@ -1,0 +1,120 @@
+/* ==========================================================================
+   1. IMPORTACIÓN DE FUENTE VARIABLE Y CONFIGURACIÓN BASE
+   ========================================================================== */
+
+/* Declaración de la fuente variable usando @font-face */
+@font-face {
+  font-family: 'Inter Variable';
+  /* Usamos una versión CDN de Inter Variable para que puedas probarlo directamente */
+  src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZhrib2Bg-4.woff2') format('woff2');
+  /* Definimos un rango dinámico de pesos (del 100 al 900) */
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Reset básico para evitar el scroll horizontal accidental por márgenes por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que el padding/border no sumen ancho extra al elemento */
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Garantía definitiva contra cualquier desbordamiento horizontal */
+  font-family: 'Inter Variable', sans-serif;
+  background-color: #71a4d7;
+  color: #0d0e0f;
+}
+
+/* ==========================================================================
+   2. LAYOUT FLUIDO (Uso de vh, vw, % y em)
+   ========================================================================== */
+
+.hero-container {
+  /* Altura fluida: ocupa el 100% del alto de la pantalla del dispositivo */
+  min-height: 100vh;
+  /* Ancho fluido usando vw y limitándolo al 100% */
+  width: 100vw;
+  max-width: 100%;
+  
+  /* Centrado del contenido con flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* Paddings fluidos usando 'em' para que escalen proporcionalmente */
+  padding: 2em;
+  text-align: center;
+}
+
+.header-content, .text-content {
+  /* Ancho responsivo usando porcentajes */
+  width: 90%; 
+  max-width: 800px; /* Evitamos que se estire demasiado en pantallas muy grandes */
+  margin-bottom: 2em; /* Espaciado fluido con em */
+}
+
+/* ==========================================================================
+   3. TIPOGRAFÍA Y ESTILOS ESPECÍFICOS DEL DESAFÍO
+   ========================================================================== */
+
+/* H1 con font-size responsivo usando clamp() */
+.fluid-title {
+  /* Valor mínimo: 1.5rem, valor preferido: 4vw (escala con la pantalla), valor máximo: 4rem */
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  color: #1a1a2e;
+  margin-bottom: 0.5em;
+  /* Transición suave para cuando ocurra un hover */
+  transition: font-variation-settings 0.3s ease;
+  font-variation-settings: 'wght' 800; /* Peso inicial grueso */
+}
+
+/* Párrafo con line-height de 1.5em y max-width en caracteres */
+.readable-paragraph {
+  line-height: 1.5em; /* Altura de línea requerida para buena lectura */
+  max-width: 60ch;    /* Limita el ancho a un máximo de 60 caracteres de ancho por línea */
+  margin: 1.2em auto; /* Centra el bloque de texto con márgenes superiores/inferiores */
+  font-size: 1.1rem;
+  text-align: justify;
+  
+  /* Transición suave para el cambio de peso en hover */
+  transition: font-variation-settings 0.4s ease, color 0.3s ease;
+  /* Definimos el peso inicial (Regular) usando configuraciones de fuentes variables */
+  font-variation-settings: 'wght' 400; 
+}
+
+/* ==========================================================================
+   4. EFECTO HOVER PARA ACTIVAR PESOS DE LA FUENTE VARIABLE
+   ========================================================================== */
+
+/* Cuando pasamos el cursor sobre el párrafo, este se vuelve más ligero de manera fluida */
+.readable-paragraph:hover {
+  font-variation-settings: 'wght' 200; /* Se vuelve extra delgado */
+  color: #0f3460;
+}
+
+/* Al pasar el cursor sobre el título, este incrementa su peso al máximo */
+.fluid-title:hover {
+  font-variation-settings: 'wght' 900; /* Grosor máximo de la fuente variable */
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES (Pantallas muy pequeñas < 480px)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .hero-container {
+    /* Reducimos el padding en móviles para ganar espacio útil */
+    padding: 1em; 
+  }
+
+  .readable-paragraph {
+    /* Disminuimos ligeramente el tamaño de fuente y el margen para evitar scrolls */
+    font-size: 1rem;
+    margin: 0.8em 0;
+    text-align: left; /* Alineación a la izquierda para mejor lectura en pantallas angostas */
+  }
+}
