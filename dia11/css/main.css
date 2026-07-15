@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcfcfc;
+}
+
+/* Contenedor Principal: */
+.container {
+    width: 100%;
+    min-height: 200vh;
+    padding: 15px;
+    /* margen interno de la pantalla */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Separación entre bloques  */
+}
+
+/* Centrado de texto y estilos comunes de etiquetas visuales */
+header,
+nav,
+aside,
+main,
+article,
+figure,
+p,
+footer,
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #333;
+    padding: 15px;
+}
+
+
+
+/* Header  ENCABEZADO */
+.main-header {
+    background-color: #d1f0ff;
+    height: 80px;
+}
+
+/* Nav (Barra de NAVEGACION) */
+.main-nav {
+    background-color: #ffd6d6;
+    height: 40px;
+}
+
+/* Contenedor central  */
+.columnascentral {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* El main ahora es 3 veces más ancho que el aside para pantallas grandes */
+    gap: 15px;
+    flex-grow: 1;
+    /* Esto hace que el centro empuje al footer hacia abajo si hay espacio libre */
+}
+
+/* Aside (Amarillo) */
+.sidebar {
+    background-color: #fffae0;
+    /* Altura mínima para que no colapse */
+    min-height: 400px;
+}
+
+/* Main (Amarillo) */
+.main-content {
+    
+    background-color: #fffae0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+    align-self: self-start;
+    /* Estira los elementos internos (article y section) a lo ancho */
+    padding: 15px;
+}
+
+/* Article (Blanco) */
+.article-box {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    padding: 15px;
+}
+
+/* Elementos internos del Article */
+.article-header {
+    background-color: #e5ffb3;
+    /* Verde lima */
+    height: 40px;
+}
+
+.article-figure {
+    background-color: #ffe6b3;
+    /* Naranja/amarillo suave */
+    height: 60px;
+}
+
+.article-paragraph {
+    background-color: #ffd9c6;
+    /* Naranja claro */
+    height: 50px;
+}
+
+
+
+/* Section (Blanco) */
+.section-box {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    height: 60px;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 20px;
+    border-color: #333;
+
+}
+
+.main-footer {
+    margin-right: auto;
+    background-color: #ffffff;
+    height: 70px;
+    border-color: #333;
+}
