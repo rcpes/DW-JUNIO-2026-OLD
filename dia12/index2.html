@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>dia0</title>
+    <link rel="shortcut icon" href="images/cropped-favicon-180x180.webp">
+    <link rel='stylesheet' href='css/main2.css'>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+
+<!-- BLOQUE COMPLETO INAMOVIBLE EN LA PARTE SUPERIOR (position: fixed) -->
+    <div class="cabecera-fija-total">
+        <header class="titulo-superior">
+            <h1>Posicionamiento CSS</h1>
+            <p>Día 12 — Guía Práctica de Propiedades Flow y Centrados</p>
+        </header>
+        <nav class="menu-fijo">
+            <div class="menu-contenido">
+                <span class="menu-titulo">Conceptos de Clase</span>
+                <ul>
+                    <li><a href="#bloque-info">Definición</a></li>
+                    <li><a href="#nivel1">Nivel 1</a></li>
+                    <li><a href="#nivel3">Nivel 3</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ÁREA PRINCIPAL DE CONTENIDO (Con margen superior exacto para empezar abajo) -->
+    <main class="main-portada">
+        
+        <!-- SECCIÓN DE INTRODUCCIÓN (Nivel 3: margin: 0 auto) -->
+        <section id="bloque-info" class="bloque-centrado-basico">
+            <h2>¿Qué es la propiedad Position?</h2>
+            <p>Controla el método de posicionamiento de un elemento dentro de su contenedor, definiendo cómo se colocan y se solapan las etiquetas. Este bloque está centrado usando la técnica clásica de <code>margin: 0 auto;</code></p>
+        </section>
+
+        <!-- DEMOSTRACIÓN DE NIVEL 1: CUADROS CON COLORES SÓLIDOS Y VISIBLES -->
+        <section id="nivel1" class="seccion-demo">
+            <h2>Nivel 1: Posicionamiento Relativo y Absoluto</h2>
+            <p>Ejemplos visuales con fondos oscuros sólidos para que el contenido sea totalmente legible:</p>
+            
+            <div class="contenedor-padre-demo">
+                
+                <!-- Relativo: Movido 20px derecha y 10px abajo -->
+                <div class="caja-relative">
+                    <strong>Relative:</strong><br>
+                    Mover +20px →, +10px ↓
+                </div>
+                
+                <!-- Absoluto: Esquina superior derecha del padre -->
+                <div class="caja-absolute-esquina">
+                    <strong>Absolute:</strong><br>
+                    Esquina Superior Derecha
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DEMOSTRACIÓN DE NIVEL 3: CENTRADO CON ABSOLUTE + TRANSFORM -->
+        <section id="nivel3" class="seccion-demo">
+            <h2>Nivel 3: Posicionamiento Avanzado y Centrado Absoluto</h2>
+            <p>Usando coordenadas físicas combinadas con traslaciones:</p>
+            
+            <div class="contenedor-padre-demo">
+                
+                <!-- Div al centro perfecto usando top 50%, left 50% y transform translate -->
+                <div class="caja-centro-perfecto">
+                    <strong>¡Centro Perfecto!</strong><br>
+                    <code>top: 50%; left: 50%; transform: translate(-50%, -50%);</code>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- AVISO DE COOKIES EN LA PARTE INFERIOR (EXTRAS: position: fixed) -->
+    <div class="modal-cookies-fixed">
+        <p>🍪 Este sitio web utiliza cookies de referencia simple (Día 12) para mejorar tu aprendizaje.</p>
+        <button class="btn-cookies">Aceptar Cookies</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

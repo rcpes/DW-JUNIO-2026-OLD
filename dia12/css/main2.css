@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   CONFIGURACIÓN GLOBAL Y RESET
+   ========================================== */
+html {
+    scroll-behavior: smooth;
+    /* Evita que la enorme barra superior tape los títulos al hacer click en el menú */
+    scroll-padding-top: 190px;[cite: 2]
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #1a202c;
+    padding-bottom: 120px; /* Espacio para el modal de cookies fijo inferior */
+}
+
+/* ==========================================
+   CABECERA FIJA ABSOLUTA (SIEMPRE VISIBLE ARRIBA)
+   ========================================== */
+.cabecera-fija-total {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000; /* Prioridad súper alta sobre todo lo demás */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Bloque del Título Principal */
+.titulo-superior {
+    background-color: #2b6cb0; /* Azul Sólido */
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    margin: 0;
+}
+
+.titulo-superior h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.titulo-superior p {
+    margin: 4px 0 0 0;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+}
+
+/* Bloque del Menú de Navegación */
+.menu-fijo {
+    background-color: #1a365d; /* Azul Oscuro Sólido */
+    margin: 0;
+    padding: 0;
+}
+
+.menu-contenido {
+    max-width: 800px;
+    margin: 0 auto;[cite: 2]
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-titulo {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #90cdf4;
+}
+
+.menu-fijo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.menu-fijo a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.menu-fijo a:hover {
+    color: #90cdf4;
+}
+
+/* ==========================================
+   ESTRUCTURA CONTENEDORA (NIVEL 3: MARGIN AUTO)
+   ========================================== */
+.main-portada {
+    max-width: 800px;
+    /* IMPORTANTÍSIMO: 185px arriba empuja todo el contenido exactamente abajo de la cabecera */
+    margin: 185px auto 40px auto;[cite: 2]
+    padding: 0 20px;
+}
+
+.bloque-centrado-basico, .seccion-demo {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.bloque-centrado-basico h2, .seccion-demo h2 {
+    color: #2b6cb0;
+    margin-top: 0;
+}
+
+/* Contenedor base de pruebas (Gris) */
+.contenedor-padre-demo {
+    background-color: #0f3154;
+    height: 250px;
+    position: relative; /* Base referencial obligatoria para los absolute hijos */[cite: 2]
+    border: 2px dashed #cbd5e0;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+/* ==========================================
+   CORRECCIÓN RADICAL DE COLORES INTERNOS
+   ========================================== */
+
+/* Caja Relative: Color Sólido Azul Marino, Texto Blanco */
+.caja-relative {
+    position: relative;[cite: 2]
+    top: 20px;[cite: 2]
+    left: 20px;[cite: 2]
+    background-color: #1a365d; 
+    color: #ffffff; 
+    padding: 12px;
+    width: 180px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Caja Absolute: Color Sólido Rojo Fuerte, Texto Blanco */
+.caja-absolute-esquina {
+    position: absolute;[cite: 2]
+    top: 0;[cite: 2]
+    right: 0;[cite: 2]
+    background-color: #c53030; 
+    color: #ffffff; 
+    padding: 12px;
+    width: 180px;
+    font-size: 0.85rem;
+    border-radius: 0 4px 0 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/* Caja Centro Perfecto: Color Sólido Verde Azulado, Texto Blanco */
+.caja-centro-perfecto {
+    position: absolute;[cite: 2]
+    top: 50%;[cite: 2]
+    left: 50%;[cite: 2]
+    transform: translate(-50%, -50%);[cite: 2]
+    background-color: #234e52; 
+    color: #ffffff; 
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width: 75%;
+    max-width: 280px;
+}
+
+code {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #fff;
+}
+
+/* ==========================================
+   EXTRAS: COOKIES (POSITION FIXED INFERIOR)
+   ========================================== */
+.modal-cookies-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a202c;
+    color: #f7fafc;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+}
+
+.modal-cookies-fixed p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.btn-cookies {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.btn-cookies:hover {
+    background-color: #38a169;
+}
