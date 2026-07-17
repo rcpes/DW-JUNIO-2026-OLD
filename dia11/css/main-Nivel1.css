@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos del body  */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 2.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    gap: 20px;
+}
+
+/* Contenedor principal */
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    flex: 3;
+}
+
+/* Configuramos el contenedor de la derecha */
+.columna-lateral {
+    flex: 1;                
+    display: flex;           /* Lo hacemos flex también... */
+    flex-direction: column;  /* ¡Pero en dirección columna! (uno abajo del otro) */
+    gap: 20px;               /* Separación vertical entre los asides */
+    align-self: flex-start;
+}
+
+
+/* Estilo para aside */
+aside {
+    background-color: #e2e8f0;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #3182ce;
+    flex: 1;
+    align-self: flex-start;
+}
+
+.aside-secundario {
+    border-left-color: #e40b00; 
+}
+
+
+
+
+/* Contenedor de la imagen y leyenda */
+figure {
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    padding: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #cc0000;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Estilos de cita */
+blockquote {
+    font-style: italic;
+    background-color: #f9f9f9;
+    border-left: 4px solid #e0d102;
+    margin: 15px 0 5px 0;
+    padding: 10px 20px;
+}
+
+cite {
+    font-weight: bold;
+    color: #013897;
+    display: block;
+    margin-left: 20px;
+}

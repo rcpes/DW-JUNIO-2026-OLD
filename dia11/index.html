@@ -14,83 +14,76 @@
 
 
 
-    <div class="container">
+    <!-- Encabezado del sitio - Rol  banner -->
+    <header role="banner">
+        <h1>Masterclass: HTML Semántico</h1>
+        <p>Estructura robusta y accesibilidad nativa</p>
+    </header>
 
-        <!-- Header  ENCABEZADO -->
-        <header class="main-header">
-            header
-        </header>
+    <!-- Barra de navegación -->
+    <nav role="navigation">
+        <ul>
+            <li><a href="#introduccion">Introducción</a></li>
+            <li><a href="#etiquetas">Etiquetas Estructurales</a></li>
+            <li><a href="#accesibilidad">ARIA Roles</a></li>
+        </ul>
+    </nav>
+
+    <!--Ccontenido -  main -->
+    <main role="main">
+
+        <!-- Sección 1: Introducción -->
+        <section id="introduccion">
+            <h2>1. Importancia de la Semántica</h2>
+            <article>
+                <h3>¿Por qué dejar de usar solo divs?</h3>
+                <p>A diferencia de los elementos <code>&lt;div&gt;</code> que no aportan significado, el <mark>HTML
+                        semántico describe claramente el contenido que encierra</mark>. Esto beneficia directamente al
+                    posicionamiento en buscadores (SEO) y facilita el mantenimiento del código en equipos de
+                    desarrollo[cite: 1].</p>
+            </article>
+        </section>
+
+        <!-- Sección 2: Etiquetas estructurales -->
+        <section id="etiquetas">
+            <h2>2. Etiquetas Estructurales de la Clase</h2>
+            <article>
+                <h3>Bloques Clave</h3>
+                <p>Durante la sesión aprendimos la función específica de contenedores esenciales[cite: 1]:</p>
+                <ul>
+                    <li><code>&lt;main&gt;</code>: Alberga el contenido principal único del documento[cite: 1].</li>
+                    <li><code>&lt;aside&gt;</code>: Dedicado a contenido tangencial o barras laterales[cite: 1].</li>
+                    <li><code>&lt;section&gt;</code>: Agrupa temáticas generales del documento[cite: 1].</li>
+                    <li><code>&lt;article&gt;</code>: Contiene información independiente y autónoma[cite: 1].</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Sección 3: Accesibilidad -->
+        <section id="accesibilidad">
+            <h2>3. Accesibilidad con ARIA Roles</h2>
+            <article>
+                <h3>Garantizando el Acceso Universal</h3>
+                <p>El atributo <code>aria-role</code> se utiliza para describir de forma explícita el propósito de un
+                    elemento en una página web[cite: 1]. Esto es fundamental para tecnologías de asistencia como los
+                    lectores de pantalla, asegurando una experiencia inclusiva[cite: 1].</p>
+
+                <figure>
+                    <img src="images/webs.png" alt="Ejemplo de roles ARIA implementados">
+                    <figcaption>Visualización de cómo los lectores de pantalla mapean el documento gracias a los roles
+                        declarados[cite: 1].</figcaption>
+                </figure>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Pie  -->
+    <footer role="contentinfo">
+        <p>&copy; 2026 - Desafío Extra Completado. Alumno de Maquetación Web Web.</p>
+    </footer>
 
 
-        <!-- Barra de NAVEGACION -->
-        <nav class="main-nav">
-            nav  |
-            incio  | contenido  |  productos   |   cursos   |  indormacion   | cotactanos 
-        </nav>
-
-        <!-- Columnas Centrales -->
-        <div class="columnascentral">
-
-            <!-- Lateral (Aside) -->
-            <aside class="sidebar">
-                aside
-            </aside>
-
-            <!-- Contenido Principal -->
-            <main class="main-content">
-                main
-            
-
-                <!-- Artículo -->
-                <article class="article-box">
-                    article
-
-                    <header class="article-header">
-                        header: Contiene todos los elementos que forman la cabecera del documento.
-                    </header>
-
-                    <figure class="article-figure">
-                        <p>
-                            figure: Contenedor de imágenes, gráficos o ilustraciones.
-                        </p>
-
-                    </figure>
-
-                    <p class="article-paragraph">
-                        parrafo
-                    </p>
-
-                </article>
-
-                <!-- Sección -->
-                <section class="section-box">
-                    Section
-                    Contiene todos los elementos que forman una sección del documento, su uso depende en
-
-                </section>
-
-            </main>
-
-        </div>
-
-        <!-- Footer Principal -->
-        <footer class="main-footer">
-
-            <div class="footer">
-
-                footer
-                <address>
-                    Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
-                    Visit us at:<br>
-                    Example.com<br>
-                    Box 564, Disneyland<br>
-                    USA
-                </address>
-
-            </div>
-        </footer>
-
-    </div>
 
 
 

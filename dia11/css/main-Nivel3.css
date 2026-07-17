@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos  */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+/* Contenedor tipo Tarjeta de Artículo */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+article {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid #48bb78; /* Un detalle verde para diferenciar este nivel */
+}
+
+/* Encabezado del artículo */
+header h2 {
+    margin: 0 0 5px 0;
+    color: #1a202c;
+    font-size: 1.8rem;
+}
+
+.fecha-publicacion {
+    margin: 0 0 25px 0;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+/* Estilo etiqueta TIME */
+time {
+    background-color: #f0fff4;
+    color: #2f855a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid #c6f6d5;
+}
+
+/* Secciones internas */
+section {
+    margin-bottom: 25px;
+}
+
+section h3 {
+    color: #2c5282;
+    margin-bottom: 10px;
+}
+
+code {
+    background-color: #edf2f7;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #e53e3e;
+}
+
+/* Lista de hitos */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f7fafc;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #48bb78;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* En pantallas pequeñas, la lista se ajusta para no amontonarse */
+@media (max-width: 480px) {
+    ul li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
