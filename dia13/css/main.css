@@ -1,0 +1,41 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+main {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  
+}
+
+section.page {
+  height: 100vh;
+  scroll-snap-align: end;
+}
+
+section.page:nth-child(1) {
+  background-color: #f44336;
+}
+
+section.page:nth-child(2) {
+  background-color: #2196f3;
+}       
+
+section.page:nth-child(3) {
+  background-color: #4caf50;
+} 
+
+section.page:nth-child(4) {
+  background-color: #ff9800;
+}
+
