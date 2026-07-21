@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tipografía y Encabezados */
+h1 {
+    color: #333;
+    font-size: 2em;
+    text-align: center;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Navegación y Enlaces */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #03746a;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    gap: 20px; 
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+/* Contenedores Principales */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+article {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    height: 100vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+div {
+    width: 60%;
+    height: 40%;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* Clases de Posicionamiento */
+.relative {
+    position: relative;
+    top: 15px;
+    left: 15px;
+}
+
+.absolute {
+    position: static;
+    top: 15px;
+    left: 15px;
+}
+
+.fixed {
+    position: static;
+    top: 15px;
+    left: 15px;
+}
+
+.sticky {
+    position: static;
+    top: 15px;
+    left: 15px;
+}
+
+
+.texto {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: justify;
+}
