@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /*de  2 columnas  */
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+
+.box {
+  background-color: #444444;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+
+/*  A y B */
+.a {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.b {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* C y el contenedor D */
+.c {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+
+/* celda D */
+
+.d {
+  grid-column: 2;
+  grid-row: 2;
+
+  /*  Grid  */
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* de 2 Columnas */
+  gap: 10px;
+  background-color: #333333;
+}
+
+/* box de  E F G */
+.d .box {
+  background-color: #cccccc;
+  color: #222222;
+}
+
+.e {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.f {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.g {
+  grid-column: 2;
+  grid-row: 2;
+}

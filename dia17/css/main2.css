@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Configuración del Grid */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas del mismo atamaño */
+  grid-template-rows: repeat(3, 100px);   /* 3 filas de 100px  */
+  grid-auto-flow: column;                
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Estilos box */
+.box {
+  background-color: #444444;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;      /* Centra verticalmente */
+  justify-content: center; /* Centra  horizontalmente */
+  border-radius: 8px;
+}
+
+
+
+/* Selecciona solo las posiciones IMPARES (1, 3, 5, 7, 9, 11) */
+.box:nth-child(odd) {
+  background-color: #c40202;
+  color: #222222;
+  border: 2px solid #000000;
+}
+
+/* Opcional: si quieres definir explícitamente el estilo de las PARES  */
+.box:nth-child(even) {
+  background-color: #06005ee5;
+  color: #ffffff;
+  border: 2px solid #f30000;
+}
+
+
+
+

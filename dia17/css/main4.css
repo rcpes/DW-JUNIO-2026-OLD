@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+
+.box {
+  background-color: #444444;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+
+.a {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+.b {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  width: 150px;
+}
+
+.c {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+
+.d {
+  grid-column: 2;
+  grid-row: 2;
+
+  /* la caja D */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* 2 columnas internas */
+  grid-template-rows: 1fr 1fr;
+  /* 2 filas internas */
+  gap: 10px;
+  background-color: #011f80;
+}
+
+
+
+.e {
+  grid-column: 1;
+  grid-row: 1 / 3;
+
+}
+
+
+.f {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+
+.g {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  width: 100px;
+
+}
