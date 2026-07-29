@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+/* Arte adornos estilos  */
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contenedor {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* fin de  Arte adornos estilos  */
+
+
+
+/* --- CAJA 1: ensanchar --- */
+.caja-escala {
+    /* Diseño comun en cada caja  */
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+
+    /* Animacion  de la caja 1  */
+    background-color: #e74c3c;
+    /* ensanchar caja 1: nombre: ensanchar  , duración:2s , curva: ease-in-out , iteración: infinite, dirección: alternate */
+    animation: ensanchar 2s ease-in-out infinite alternate;
+}
+
+/* movimeinto de la caja1 */
+@keyframes ensanchar {
+    0% {
+        width: 100px;
+    }
+
+    100% {
+        width: 200px;
+    }
+}
+
+/* ---fin de  CAJA 1: ensanchar --- */
+
+
+
+/* --- CAJA 2: Rotar --- */
+.caja-rotar {
+    /* Diseño comun de en caja  */
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+
+    /* Animacion  de la caaja 2 */
+    background-color: #2ecc71;
+    /* rota 3s linea para un giro infinito  */
+    animation: rotar 3s linear infinite;
+}
+
+/* movimeinto de la caja2 */
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+        /*rota 360 grados */
+    }
+}
+
+
+
+
+/* --- CAJA 3 cambia de color --- */
+.caja-color {
+
+    /* Diseño comun de en caja  */
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+
+    /* Animacion  de la caaja 3 */
+    background-color: #3498db;
+    /* cambia de color cada 4 segundos de forma infinita eternmente  */
+    animation: cambiarColor 4s infinite alternate;
+}
+
+/* movimeinto de la caja3 */
+@keyframes cambiarColor {
+    0% {
+        background-color: #3498db;
+    }
+
+    25% {
+        background-color: #9b59b6;
+    }
+
+    50% {
+        background-color: #f1c40f;
+    }
+
+    75% {
+        background-color: #0f38f1;
+    }
+
+    100% {
+        background-color: #e67e22;
+    }
+}
+
+
+
+/* EJERCICIO 2 TEXTO  */
+
+.texto-titilante {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+    /* ANIMACION  DE UN SEGUNDO INFINIA */
+    animation: parpadear 1s infinite alternate;
+}
+
+@keyframes parpadear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+/* FIN DE EJERCICIO 2  */
+
+
+
+/* EJERCICIO 3: CAJA MOVIL  */
+
+.caja-movil {
+    width: 100px;
+    height: 100px;
+    background-color: #9b59b6;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+
+    /* ANIMACION DE 3 SEGUNDOS INFINITA   */
+    animation: mover 2s ease-in-out infinite alternate;
+}
+
+@keyframes mover {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(900px));
+    }
+}
+

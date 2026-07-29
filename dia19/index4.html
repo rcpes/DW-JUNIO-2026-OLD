@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='es'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>dia0</title>
+    <link rel="shortcut icon" href="images/cropped-favicon-180x180.webp">
+    <link rel='stylesheet' href='css/main4.css'>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+
+    <main class="contenedor-pagina">
+
+        <h1 class="titulo-principal">Ejercicio 3</h1>
+
+        <!-- SECCIÓN 1: animation-fill-mode  -->
+        <section class="seccion">
+            <h2>Sección 1</h2>
+            <div class="caja-centro"></div>
+        </section>
+
+        <!-- SECCIÓN 2: cubic-bezier  -->
+        <section class="seccion">
+            <h2>Sección 2</h2>
+            <div class="caja-lado-a-lado"></div>
+        </section>
+
+        <!-- TEXTO  -->
+        <div class="bloque-texto">
+            <p>Sigue bajando para ver los 10 bloques que se acomodan con el scroll 👇</p>
+        </div>
+
+        <!-- SECCIÓN DE 10 CAJAS ANIMADAS CON SCROLL-->
+        <section class="contenedor-scroll-cajas">
+
+
+            <!-- Cajas impares:  Izquierda -->
+            <div class="caja-scroll desde-izquierda color-1">Caja 1</div>
+            <div class="caja-scroll desde-izquierda color-3">Caja 3</div>
+            <div class="caja-scroll desde-izquierda color-5">Caja 5</div>
+            <div class="caja-scroll desde-izquierda color-7">Caja 7</div>
+            <div class="caja-scroll desde-izquierda color-9">Caja 9</div>
+
+            <!-- Cajas pares:  Derecha -->
+            <div class="caja-scroll desde-derecha color-2">Caja 2</div>
+            <div class="caja-scroll desde-derecha color-4">Caja 4</div>
+            <div class="caja-scroll desde-derecha color-6">Caja 6</div>
+            <div class="caja-scroll desde-derecha color-8">Caja 8</div>
+            <div class="caja-scroll desde-derecha color-10">Caja 10</div>
+
+        </section>
+
+
+        <!-- TEXTO  -->
+        <div class="bloque-texto">
+            <p>La propiedad abreviada `scroll-timeline` puede aplicarse a un elemento contenedor para establecer tanto
+                la propiedad `scroll-timeline-name` como la `scroll-timeline-axis`. Se define en el elemento desplazable
+                (*scroller*) que proporcionará la línea de tiempo. Si el contenedor no presenta desbordamiento
+                (*overflow*) que permita el desplazamiento, o si dicho desbordamiento está oculto o recortado, no se
+                creará ninguna línea de tiempo.</p>
+        </div>
+
+        <div class="bloque-texto">
+            <p>El valor de `scroll-timeline-name`, si no se establece en `none`, debe ser un `<dashed-ident>`, lo que
+                    significa que debe comenzar con `--`. Esto ayuda a evitar conflictos de nombres con palabras clave
+                    estándar de CSS. Posteriormente, dicho nombre puede utilizarse como valor de la propiedad
+                    `animation-timeline` de un elemento para especificar el contenedor de desplazamiento que definirá su
+                    línea de tiempo de animación, controlando el progreso de esta a medida que se realiza el
+                    desplazamiento.</p>
+        </div>
+
+        <div class="bloque-texto">
+            <p>El valor opcional axis define el eje de la línea de tiempo de desplazamiento (*scroll-timeline-axis*),
+                    cuyo valor predeterminado es `block` si se omite. Si se especifican tanto un nombre como un eje, el
+                    orden debe ser el valor  scroll-timeline-name  seguido del valor  axis . Si el axis aparece en
+                                primer lugar, la declaración no es válida y será ignorada. </p>
+        </div>
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
