@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+/* caja 1  */
+/* Cuando pongas el ratón sobre el primero, tiene que hacerse más ancho  (200px). */
+
+.caja1 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border: black 1px solid;
+    border-radius: 6px;
+    transition: width 1s, height 1s;
+}
+
+.caja1:hover {
+  width: 200px;
+
+}
+
+/* fin de la caja 1 */
+
+
+
+/* caja 1  */
+/* Al estar sobre el segundo, tiene que hacerse más alto (200px). */
+.caja2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 248, 12);
+    border: black 1px solid;
+    border-radius: 6px;
+    transition: width 1s, height 1s;
+}
+
+.caja2:hover {
+  height: 200px;
+
+}
+/* fin de la caja 2 */
+
+
+/* caja 3  */
+/* Cuando estés sobre el último, debe hacer ambas cosas. */
+
+.caja3 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(3, 0, 184);
+    border: black 1px solid;
+    border-radius: 6px;
+    transition: width 1s, height 1s;
+}
+
+.caja3:hover {
+  height: 200px;
+  width: 200px;
+
+}
+
+
+.caja4 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(184, 0, 184);
+    border: black 1px solid;
+    border-radius: 6px;
+    transition: width 1s, height 1s;
+    transition: background-color 1s;
+}
+
+
+.caja4:hover {
+background-color: rgb(0, 216, 198);
+
+}
+
+
+
+
+
+
+
+
+
+/* 
+
+
+.caja3 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(38, 0, 255);
+    border: black 1px solid;
+    border-radius: 6px;
+    transition: background-color 1s;
+}
+
+
+
+div.transition {
+    transition: ;
+    transition: background-color 1s infinite alternate;
+}
+
+
+
+div.transition:hover {
+    background-color: blue;
+
+}
+
+
+div.transition {
+    transition: background-color 1s;
+}
+
+div.transition:hover {
+    background-color: blue;
+}
+
+
+div.animation {
+    animation: color-change 1s infinite alternate;
+}
+
+@keyframes color-change {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    75% {
+        background-color: orange;
+    }
+
+    100% {
+        background-color: blue;
+    }
+}
+
+
+
+
+div.animation2 {
+    position: relative;
+    animation: move-and-change2 alternate;   
+    animation-timeline: scroll(root block);
+}
+
+@keyframes move-and-change2 {
+    0% {
+        background-color: red;
+        top: 0px;
+        left: 0px;
+    }
+
+    25% {
+        background-color: yellow;
+        top: 0px;
+        left: 200px;
+    }
+
+    50% {
+        background-color: green;
+        top: 200px;
+        left: 200px;
+    }
+
+    75% {
+        background-color: orange;
+        top: 200px;
+        left: 0px;
+    }
+
+    100% {
+        background-color: blue;
+        top: 0px;
+        left: 0px;
+    }
+} */
