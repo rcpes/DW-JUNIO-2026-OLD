@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+
+
+body {
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+/* Tarjeta principal */
+.form-container {
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Registro de Usuario */
+.form-header h2 {    
+  color: #0121af;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* parrafo del Registro de Usuario */
+.form-header p {
+  color: #697386;
+  font-size: 0.9rem;
+}
+
+
+
+/* Campos de entrada */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  color: #9e0000;
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e3e8ee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1a1f36;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e3e8ee;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1a1f36;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+
+
+
+
+
+
+/* Efectos al interactuar (Focus y Hover) */
+.form-group input:hover {
+  border-color: #ff1201;
+  border-l
+}
+
+.form-group input:focus {
+  border-color: #635bff;
+  box-shadow: 0 0 0 4px rgba(255, 17, 0, 0.12);
+}
+
+.form-group input::placeholder {
+  color: #a3acb9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Botón de envío */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background-color: #635bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #4b44d4;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
