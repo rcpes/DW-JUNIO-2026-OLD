@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chevrolet - Solicita una prueba de manejo</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon_es_chevrolet_com_32x32.png">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER & NAVEGACIÓN ==================== -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="header-left">
+                <div class="quick-nav-buttons">
+                    <a href="#" class="nav-btn-link">Vehículos</a>
+                    <a href="#" class="nav-btn-link">Comprar</a>
+                </div>
+            </div>
+            
+            <div class="brand-logo">
+                <a href="index.html">
+                    <picture>
+                        <source srcset="images/chevrolet-bowtie-120.svg" type="image/webp">
+                        <source srcset="images/chevrolet-bowtie-120.svg" type="image/svg+xml">
+                        <img src="images/chevrolet-bowtie-120.svg" alt="Chevrolet Logo" class="logo-img">
+                    </picture>
+                </a>
+            </div>
+            
+            <div class="user-profile">
+                <picture>
+                    <source srcset="images/account.svg" type="image/webp">
+                    <source srcset="images/account.svg" type="image/svg+xml">
+                    <img src="images/account.svg" alt="Avatar usuario" class="profile-avatar">
+                </picture>
+            </div>
+        </div>
+
+        <!-- Navegación Principal -->
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Silverado EV</a></li>
+                <li><a href="recursos.html">Recursos del dueño</a></li>
+                <li><a href="contacto.html" class="active">Solicita una prueba de manejo</a></li>
+                <li><a href="capacidad.html">Capacidad y Seguridad</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="test-drive-main container">
+        <h1 class="page-title">Solicita una prueba de manejo</h1>
+
+        <form action="#" method="POST" class="test-drive-form">
+            <div class="form-grid">
+                
+                <!-- COLUMNA 1: TU VEHÍCULO -->
+                <div class="form-col">
+                    <h2 class="section-subtitle">1. Tu vehículo</h2>
+                    
+                    <div class="vehicle-preview">
+                        <picture>
+                            <source srcset="images/2026-silveradoev-ct35843-4wt-gba-trimselector.avif" type="image/webp">
+                            <img src="images/2026-silveradoev-ct35843-4wt-gba-trimselector.avif" alt="2026 Silverado EV" class="vehicle-img">
+                        </picture>
+                    </div>
+
+                    <div class="vehicle-info-details">
+                        <p class="vehicle-model-title">2026 Silverado EV</p>
+                        <p class="vehicle-msrp">MSRP Inicial: $55,395<sup>1</sup></p>
+                        <p class="vehicle-disclaimer-text">
+                            Tu concesionario elegido te proporcionará el mejor precio de venta para este vehículo.
+                        </p>
+                        <p class="vehicle-disclaimer-text image-note">
+                            Es posible que la imagen no refleje el vehículo exacto o las opciones exactas elegidas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: TU INFORMACIÓN -->
+                <div class="form-col">
+                    <h2 class="section-subtitle">2. Tu información</h2>
+                    
+                    <p class="privacy-consent-text">
+                        Al proporcionar mi información de contacto a continuación, doy mi permiso para que Chevrolet, GM y/o un concesionario GM me contacten con ofertas de GM e información de productos GM. 
+                        <a href="#" class="privacy-link">Aviso de privacidad de GM</a>
+                    </p>
+
+                    <div class="input-group">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre: *" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido: *" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" id="codigo-postal" name="codigo-postal" placeholder="Código postal: *" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono:">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder="Email: *" required>
+                    </div>
+
+                    <div class="contact-preference-group">
+                        <span class="preference-label">Contacto preferido: *</span>
+                        <div class="radio-options">
+                            <label class="radio-label">
+                                <input type="radio" name="contacto_preferido" value="email" checked>
+                                <span class="radio-custom"></span>
+                                Email
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="contacto_preferido" value="telefono">
+                                <span class="radio-custom"></span>
+                                Teléfono
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 3: CONCESIONARIOS -->
+                <div class="form-col">
+                    <h2 class="section-subtitle">3. Concesionarios</h2>
+
+                    <div class="dealer-search-box">
+                        <input type="text" placeholder="Busca por ciudad/estado, código postal o concesiona..." class="dealer-input">
+                        <button type="button" class="btn btn-blue-submit btn-search-dealer">Buscar</button>
+                    </div>
+
+                    <div class="extra-details-box">
+                        <textarea placeholder="Detalles extra ayudarán a tu concesionario con tu solicitud:" rows="5" class="extra-textarea"></textarea>
+                    </div>
+
+                    <div class="submit-action-box">
+                        <button type="submit" class="btn btn-blue-submit btn-main-submit">Enviar</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-slogan">
+                <h2>Together let’s drive<sup>™</sup></h2>
+            </div>
+
+            <div class="footer-main-grid">
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="#">Todos los vehículos</a></li>
+                        <li><a href="#">SUV</a></li>
+                        <li><a href="#">Camionetas</a></li>
+                        <li><a href="#">Eléctricos</a></li>
+                        <li><a href="#">Corvette</a></li>
+                        <li><a href="#">Todos los deportivos</a></li>
+                        <li><a href="#">Vans</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="#">Comercial</a></li>
+                        <li><a href="#">Flota de GM</a></li>
+                        <li><a href="#">Discontinuado</a></li>
+                        <li><a href="#">Valor de intercambio</a></li>
+                        <li><a href="#">Aplicación móvil MyChevrolet</a></li>
+                        <li><a href="#">Premios y galardones</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="#">Ofertas especiales</a></li>
+                        <li><a href="#">Accesibilidad del vehículo</a></li>
+                        <li><a href="#">GM Financial - Presenta solicitud para precalificar hoy mismo</a></li>
+                        <li><a href="#">Llamados a revisión</a></li>
+                        <li><a href="#">Contáctanos</a></li>
+                        <li><a href="#">Garantía de California</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-cta-col">
+                    <a href="#" class="btn-cta-newsletter">Obtener actualizaciones</a>
+                </div>
+            </div>
+
+            <div class="footer-legal-row">
+                <ul class="legal-links">
+                    <li><a href="#">Mapa del sitio</a></li>
+                    <li><a href="#">Sala de prensa</a></li>
+                    <li><a href="#">Chevrolet internacional</a></li>
+                    <li><a href="#">Información de Copyright y marca comercial</a></li>
+                    <li><a href="#">Información importante</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Accesibilidad del sitio web</a></li>
+                    <li><a href="#">Carreras</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom-row">
+                <div class="footer-privacy-links">
+                    <a href="#">AdChoices</a>
+                    <a href="#">Tus opciones de privacidad y derechos de cancelación</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook" class="social-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.005 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 17.005 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="social-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="btn-social" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
