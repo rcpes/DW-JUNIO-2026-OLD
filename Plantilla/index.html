@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprende a Leer - Cartilla Interactiva Corregida</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    }
+
+    body {
+      background-color: #fdf6e3;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border: 3px solid #ffcc80;
+      text-align: center;
+    }
+
+    h1 {
+      color: #e65100;
+      margin-top: 0;
+    }
+
+    /* Sección de Sílabas */
+    .cartilla {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      background-color: #fff8e1;
+      padding: 15px;
+      border-radius: 10px;
+      border: 2px solid #ffe082;
+    }
+
+    .card-silaba {
+      border: 2px solid #333;
+      padding: 10px;
+      border-radius: 10px;
+      background: white;
+      width: 80px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      user-select: none;
+    }
+
+    .card-silaba:hover {
+      transform: scale(1.05);
+      background-color: #ffe0b2;
+    }
+
+    .card-silaba .icono {
+      font-size: 2.5rem;
+      display: block;
+    }
+
+    .card-silaba .texto-silaba {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e91e63;
+    }
+
+    /* Sección de Palabras */
+    .grid-palabras {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .palabra {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      padding: 8px 20px;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .palabra:hover {
+      background-color: #e3f2fd;
+      border-color: #2196f3;
+    }
+
+    .palabra.activa {
+      background-color: #ffe082;
+      border: 3px dashed #ff9800;
+      transform: scale(1.1);
+    }
+
+    /* Controles de Voz */
+    .controls {
+      margin-top: 20px;
+    }
+
+    .btn-mic {
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 12px 25px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.2s, transform 0.1s;
+    }
+
+    .btn-mic:hover {
+      background-color: #43a047;
+    }
+
+    .btn-mic:active {
+      transform: scale(0.95);
+    }
+
+    #resultado {
+      font-size: 1.3rem;
+      font-weight: bold;
+      min-height: 40px;
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Lección: La Letra M</h1>
+    <p>Haz clic en las sílabas o palabras para escucharlas.</p>
+
+    <!-- Cartilla de Sílabas -->
+    <div class="cartilla">
+      <div class="card-silaba" onclick="hablar('ma')">
+        <span class="icono">✋</span>
+        <span class="texto-silaba">ma</span>
+      </div>
+      <div class="card-silaba" onclick="hablar('me')">
+        <span class="icono">🪑</span>
+        <span class="texto-silaba">me</span>
+      </div>
+      <div class="card-silaba" onclick="hablar('mi')">
+        <span class="icono">🎤</span>
+        <span class="texto-silaba">mi</span>
+      </div>
+      <div class="card-silaba" onclick="hablar('mo')">
+        <span class="icono">🐒</span>
+        <span class="texto-silaba">mo</span>
+      </div>
+      <div class="card-silaba" onclick="hablar('mu')">
+        <span class="icono">👧</span>
+        <span class="texto-silaba">mu</span>
+      </div>
+    </div>
+
+    <hr style="border: 0; border-top: 2px dashed #ccc;">
+
+    <!-- Listado de Palabras -->
+    <p>Selecciona una palabra y presiona el micrófono para leerla:</p>
+    <div class="grid-palabras">
+      <span class="palabra" onclick="seleccionarPalabra(this, 'mamá')">mamá</span>
+      <span class="palabra" onclick="seleccionarPalabra(this, 'ama')">ama</span>
+      <span class="palabra" onclick="seleccionarPalabra(this, 'mami')">mami</span>
+      <span class="palabra" onclick="seleccionarPalabra(this, 'mimo')">mimo</span>
+      <span class="palabra" onclick="seleccionarPalabra(this, 'memo')">memo</span>
+      <span class="palabra" onclick="seleccionarPalabra(this, 'mía')">mía</span>
+    </div>
+
+    <!-- Acción de Micrófono -->
+    <div class="controls">
+      <button class="btn-mic" onclick="escuchar()">🎙️ Leer Palabra Seleccionada</button>
+      <div id="resultado"></div>
+    </div>
+  </div>
+
+  <script>
+    let palabraActual = '';
+    let elementoActual = null;
+    let recognition = null;
+    let timeoutId = null;
+
+    // Función auxiliar para quitar acentos y tildes
+    function limpiarAcentos(texto) {
+      return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    // 1. REPRODUCIR SONIDO (SpeechSynthesis)
+    function hablar(texto) {
+      window.speechSynthesis.cancel();
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = 'es-ES';
+      mensaje.rate = 0.7;
+      window.speechSynthesis.speak(mensaje);
+    }
+
+    // 2. SELECCIONAR PALABRA
+    function seleccionarPalabra(elemento, palabra) {
+      if (elementoActual) {
+        elementoActual.classList.remove('activa');
+      }
+      elementoActual = elemento;
+      elementoActual.classList.add('activa');
+      palabraActual = palabra;
+
+      hablar(palabra);
+
+      const $resultado = document.getElementById('resultado');
+      $resultado.innerText = `Palabra seleccionada: "${palabra}". Presiona el micrófono para leer.`;
+      $resultado.style.color = "#333";
+    }
+
+    // 3. CAPTURAR Y VALIDAR VOZ (SpeechRecognition) - VERSIÓN CORREGIDA
+    function escuchar() {
+      const $resultado = document.getElementById('resultado');
+
+      // Detener cualquier captura previa si existe para evitar conflictos
+      if (recognition) {
+        recognition.abort();
+      }
+
+      if (!palabraActual) {
+        alert("Por favor, haz clic en una palabra primero para seleccionarla.");
+        return;
+      }
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        $resultado.innerText = "Error: Tu navegador no soporta el reconocimiento de voz. Usa Google Chrome o Microsoft Edge.";
+        $resultado.style.color = "red";
+        return;
+      }
+
+      recognition = new SpeechRecognition();
+      recognition.lang = 'es-ES';
+      // Chrome a veces prefiere reconocer 'es-MX' o 'es-US' por defecto si el OS está así.
+      // Forzar 'es-ES' suele ser lo mejor, pero a veces usar recognition.lang = navigator.language ayuda en Chrome.
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      $resultado.innerText = "🎙️ Escuchando... ¡Habla ahora!";
+      $resultado.style.color = "#ff9800";
+
+      // Temporizador de seguridad (5 segundos)
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (recognition) {
+          recognition.stop();
+          $resultado.innerText = "⏱️ Tiempo agotado. Vuelve a presionar el botón.";
+          $resultado.style.color = "gray";
+        }
+      }, 5000);
+
+      // Evento al recibir el resultado de voz - AQUÍ ESTÁ LA CORRECCIÓN CLAVE
+      recognition.onresult = (event) => {
+        clearTimeout(timeoutId);
+
+        let textoCapturado = event.results[0][0].transcript;
+        const palabraLimpiaObjetivo = palabraActual.trim();
+
+        // --- CORRECCIÓN CLAVE ---
+        // 1. Convertir a minúsculas y quitar espacios extra al principio/final
+        let textoLimpio = textoCapturado.toLowerCase().trim();
+
+        // 2. CORRECCIÓN PARA EDGE: Eliminar el punto final si existe (Edge lo añade automáticamente)
+        if (textoLimpio.endsWith('.')) {
+          textoLimpio = textoLimpio.slice(0, -1);
+        }
+        // -------------------------
+
+        // Normalización final (remover tildes de ambas palabras para compararlas fácilmente)
+        const capturadoFinalParaComparar = limpiarAcentos(textoLimpio);
+        const objetivoFinalParaComparar = limpiarAcentos(palabraLimpiaObjetivo.toLowerCase().trim());
+
+        if (capturadoFinalParaComparar === objetivoFinalParaComparar) {
+          $resultado.innerText = `¡Excelente! Dijiste "${textoCapturado}" 🎉`;
+          $resultado.style.color = "green";
+          hablar("¡Muy bien!");
+        } else {
+          $resultado.innerText = `Dijiste "${textoCapturado}". Inténtalo de nuevo 💪`;
+          $resultado.style.color = "#d32f2f";
+        }
+      };
+
+      // Detener automáticamente al terminar de hablar
+      recognition.onspeechend = () => {
+        if (recognition) recognition.stop();
+      };
+
+      // Manejo de Errores - MEJORADO PARA CHROME
+      recognition.onerror = (event) => {
+        clearTimeout(timeoutId);
+        if (event.error === 'no-speech') {
+          $resultado.innerText = "No se escuchó nada. Intenta hablar más cerca del micrófono.";
+        } else if (event.error === 'not-allowed') {
+          // ERROR CRÍTICO EN CHROME SI NO USAS UN SERVIDOR LOCAL
+          $resultado.innerText = "Error: Permiso de micrófono denegado.\n1. Asegúrate de ejecutar esta página desde un servidor local (como Live Server).\n2. Habilita el permiso en tu navegador.";
+        } else if (event.error === 'network') {
+          $resultado.innerText = "Error de red. El reconocimiento de voz de Chrome necesita conexión a internet.";
+        } else {
+          $resultado.innerText = "Ocurrió un problema (" + event.error + "). Intenta otra vez.";
+        }
+        $resultado.style.color = "red";
+      };
+
+      // Iniciar captura
+      try {
+        recognition.start();
+      } catch (e) {
+        console.error("Error al iniciar el micrófono:", e);
+        $resultado.innerText = "No se pudo iniciar el micrófono. Verifica los permisos.";
+        $resultado.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

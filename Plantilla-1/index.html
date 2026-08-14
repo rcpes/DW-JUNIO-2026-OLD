@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 1: Familia de la M - Cartilla Interactiva</title>
+  
+  <!-- Fuente Google Fonts (Fredoka) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Hoja de Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="template-container">
+
+    <!-- IMAGEN DE FONDO -->
+    <img src="images/fondo.png" alt="Fondo" class="bg-image">
+
+    <!-- 1. TÍTULO PRINCIPAL -->
+    <h1 class="title-main">Lección 1: Familia de la <span class="highlight">M</span></h1>
+
+    <!-- 2. TARJETAS DE SÍLABAS CON ANIMACIÓN DE IMÁGENES -->
+    <div class="cards-container">
+      <div class="card-box" onclick="animarYHablar(this, 'mano', 'ma')">
+        <img src="images/mano1.png" alt="Mano" id="img-mano">
+        <span class="card-syllable">MA</span>
+      </div>
+      <div class="card-box" onclick="animarYHablar(this, 'mesa', 'me')">
+        <img src="images/mesa1.png" alt="Mesa" id="img-mesa">
+        <span class="card-syllable">ME</span>
+      </div>
+      <div class="card-box" onclick="animarYHablar(this, 'microfono', 'mi')">
+        <img src="images/microfono1.png" alt="Micrófono" id="img-microfono">
+        <span class="card-syllable">MI</span>
+      </div>
+      <div class="card-box" onclick="animarYHablar(this, 'mono', 'mo')">
+        <img src="images/mono1.png" alt="Mono" id="img-mono">
+        <span class="card-syllable">MO</span>
+      </div>
+      <div class="card-box" onclick="animarYHablar(this, 'muneca', 'mu')">
+        <img src="images/muneca1.png" alt="Muñeca" id="img-muneca">
+        <span class="card-syllable">MU</span>
+      </div>
+    </div>
+
+    <!-- 3. PANEL INTERACTIVO DE MICRÓFONO Y MENSAJES -->
+    <div class="interactive-panel">
+      <button class="btn-mic" onclick="escuchar()">🎙️ Leer Palabra Seleccionada</button>
+      <div id="resultado">Haz clic en una palabra y presiona el botón.</div>
+    </div>
+
+    <!-- 4. RECUADROS DE PALABRAS INTERACTIVAS -->
+    <div class="words-grid">
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'mamá')">
+        <span class="text-red">ma</span><span class="text-black">má</span>
+      </div>
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'ama')">
+        <span class="text-black">a</span><span class="text-red">ma</span>
+      </div>
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'mami')">
+        <span class="text-red">ma</span><span class="text-black">mi</span>
+      </div>
+
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'amo')">
+        <span class="text-black">a</span><span class="text-red">mo</span>
+      </div>
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'mima')">
+        <span class="text-red">mi</span><span class="text-black">ma</span>
+      </div>
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'eme')">
+        <span class="text-black">e</span><span class="text-red">me</span>
+      </div>
+
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'memo')">
+        <span class="text-red">me</span><span class="text-black">mo</span>
+      </div>
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'mimo')">
+        <span class="text-red">mi</span><span class="text-black">mo</span>
+      </div>
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'mío')">
+        <span class="text-red">mí</span><span class="text-black">o</span>
+      </div>
+
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'ame')">
+        <span class="text-black">a</span><span class="text-red">me</span>
+      </div>
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'má')">
+        <span class="text-black">má</span>
+      </div>
+      <div class="word-cell" onclick="seleccionarPalabra(this, 'música')">
+        <span class="text-red">mú</span><span class="text-black">sica</span>
+      </div>
+    </div>
+
+    <!-- 5. PIE DE PÁGINA -->
+    <div class="footer-tag">Proyecto version 0.1</div>
+
+  </div>
+
+  <!-- SCRIPT DE VOZ Y ANIMACIÓN -->
+  <script>
+    let palabraActual = '';
+    let elementoActual = null;
+    let recognition = null;
+    let timeoutId = null;
+    let animacionesActivas = {}; // Para evitar superposición de animaciones
+
+    function limpiarAcentos(texto) {
+      return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function hablar(texto) {
+      window.speechSynthesis.cancel();
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = 'es-ES';
+      mensaje.rate = 0.7;
+      window.speechSynthesis.speak(mensaje);
+    }
+
+    // FUNCIÓN PARA ANIMAR SECUENCIA DE 5 IMÁGENES + VOZ
+    function animarYHablar(elementoCard, nombreBase, silaba) {
+      // Reproducir voz
+      hablar(silaba);
+
+      const imgElement = elementoCard.querySelector('img');
+
+      // Si ya hay una animación corriendo en esta imagen, la limpiamos
+      if (animacionesActivas[nombreBase]) {
+        clearInterval(animacionesActivas[nombreBase]);
+      }
+
+      // Añadir clase CSS para efecto visual
+      imgElement.classList.add('animando');
+
+      let frameActual = 1;
+      const totalFrames = 5;
+      const velocidadMs = 300; // Tiempo en ms entre cada foto (100ms = rápido y fluido)
+
+      animacionesActivas[nombreBase] = setInterval(() => {
+        frameActual++;
+        
+        if (frameActual <= totalFrames) {
+          imgElement.src = `images/${nombreBase}${frameActual}.png`;
+        } else {
+          // Regresar a la imagen inicial y detener intervalo
+          imgElement.src = `images/${nombreBase}1.png`;
+          imgElement.classList.remove('animando');
+          clearInterval(animacionesActivas[nombreBase]);
+          delete animacionesActivas[nombreBase];
+        }
+      }, velocidadMs);
+    }
+
+    function seleccionarPalabra(elemento, palabra) {
+      if (elementoActual) {
+        elementoActual.classList.remove('activa');
+      }
+      elementoActual = elemento;
+      elementoActual.classList.add('activa');
+      palabraActual = palabra;
+
+      hablar(palabra);
+
+      const $resultado = document.getElementById('resultado');
+      $resultado.innerText = `Seleccionaste: "${palabra}". Presiona el micrófono.`;
+      $resultado.style.color = "#1c1c1e";
+    }
+
+    function escuchar() {
+      const $resultado = document.getElementById('resultado');
+
+      if (recognition) {
+        recognition.abort();
+      }
+
+      if (!palabraActual) {
+        $resultado.innerText = "⚠️ Haz clic en una palabra antes de leer.";
+        $resultado.style.color = "#d32f2f";
+        return;
+      }
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        $resultado.innerText = "Error: Usa Google Chrome o MS Edge.";
+        $resultado.style.color = "red";
+        return;
+      }
+
+      recognition = new SpeechRecognition();
+      recognition.lang = 'es-ES';
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      $resultado.innerText = "🎙️ Escuchando... ¡Lee ahora!";
+      $resultado.style.color = "#ff9800";
+
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (recognition) {
+          recognition.stop();
+          $resultado.innerText = "⏱️ Tiempo agotado. Inténtalo otra vez.";
+          $resultado.style.color = "gray";
+        }
+      }, 5000);
+
+      recognition.onresult = (event) => {
+        clearTimeout(timeoutId);
+
+        let textoCapturado = event.results[0][0].transcript;
+        const palabraLimpiaObjetivo = palabraActual.trim();
+
+        let textoLimpio = textoCapturado.toLowerCase().trim();
+        if (textoLimpio.endsWith('.')) {
+          textoLimpio = textoLimpio.slice(0, -1);
+        }
+
+        const capturadoFinal = limpiarAcentos(textoLimpio);
+        const objetivoFinal = limpiarAcentos(palabraLimpiaObjetivo.toLowerCase().trim());
+
+        if (capturadoFinal === objetivoFinal) {
+          $resultado.innerText = `¡Excelente! Dijiste "${textoCapturado}" 🎉`;
+          $resultado.style.color = "#2e7d32";
+          hablar("¡Muy bien!");
+        } else {
+          $resultado.innerText = `Dijiste "${textoCapturado}". Inténtalo de nuevo 💪`;
+          $resultado.style.color = "#d32f2f";
+          hablar("Inténtalo nuevamente");
+        }
+      };
+
+      recognition.onspeechend = () => {
+        if (recognition) recognition.stop();
+      };
+
+      recognition.onerror = (event) => {
+        clearTimeout(timeoutId);
+        if (event.error === 'no-speech') {
+          $resultado.innerText = "No se escuchó nada. Acércate más al micrófono.";
+        } else if (event.error === 'not-allowed') {
+          $resultado.innerText = "Permiso de micrófono denegado.";
+        } else {
+          $resultado.innerText = "Ocurrió un problema (" + event.error + ").";
+        }
+        $resultado.style.color = "#d32f2f";
+      };
+
+      try {
+        recognition.start();
+      } catch (e) {
+        console.error("Error al iniciar micrófono:", e);
+      }
+    }
+  </script>
+</body>
+</html>
