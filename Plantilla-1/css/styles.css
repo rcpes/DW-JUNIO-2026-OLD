@@ -14,14 +14,14 @@ body {
   min-height: 100vh;
   background-color: #F5F0E6;
   font-family: 'Fredoka', cursive, sans-serif;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
-/* Contenedor principal */
+/* Contenedor principal ajustado al nuevo fondo */
 .template-container {
   position: relative;
   width: 768px;
-  height: 900px;
+  height: 960px;
   margin: 0 auto;
   border-radius: 24px;
   overflow: hidden;
@@ -38,55 +38,107 @@ body {
   z-index: 0;
 }
 
-/* Capas sobre la imagen */
+/* Elevación de capas */
 .title-main,
+.mascot-img,
+.top-menu-container,
 .cards-container,
 .interactive-panel,
-.words-grid,
-.footer-tag {
+.words-grid {
   z-index: 1;
 }
 
 /* ==========================================
-   1. TÍTULO PRINCIPAL
+   0. TÍTULO PRINCIPAL Y MASCOTA
    ========================================== */
 .title-main {
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: 0;
   width: 100%;
   text-align: center;
-  font-size: 24px;
-  color: #222222;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.12);
+  font-size: 21px;
+  color: #5c2c16;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.title-main span.highlight {
-  color: #ff3b30;
+.mascot-img {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 110px;
+  height: auto;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.15));
 }
 
 /* ==========================================
-   2. SÍLABAS Y DIBUJOS ANIMADOS
+   MENÚ SUPERIOR EN LA REPISA
+   ========================================== */
+.top-menu-container {
+  position: absolute;
+  top: 40px;
+  left: 140px;
+  width: 605px;
+  height: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.nav-btn {
+  width: 138px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.12s ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+}
+
+.nav-btn img {
+  max-height: 48px;
+  max-width: 90px;
+  object-fit: contain;
+  margin-bottom: 2px;
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.12));
+}
+
+.nav-btn span {
+  font-size: 15px;
+  color: #6d3319;
+  font-weight: bold;
+}
+
+/* ==========================================
+   1. TARJETAS DE SÍLABAS (MA - ME - MI - MO - MU)
    ========================================== */
 .cards-container {
   position: absolute;
-  top: 38px;
-  left: 38px;
-  width: 692px;
-  height: 220px;
+  top: 172px;
+  left: 32px;
+  width: 704px;
+  height: 200px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
 .card-box {
-  width: 125px;
+  width: 130px;
   height: 195px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 5px 8px 5px;
+  padding: 15px 5px 8px 5px;
   cursor: pointer;
   transition: transform 0.15s ease-in-out;
   user-select: none;
@@ -98,20 +150,19 @@ body {
 
 .card-box img {
   max-width: 85%;
-  max-height: 95px;
+  max-height: 90px;
   object-fit: contain;
   margin-top: 5px;
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.15));
   transition: transform 0.1s ease-in-out;
 }
 
-/* Clase dinámica que se activa al hacer clic para dar feedback de movimiento */
 .card-box img.animando {
   transform: scale(1.12);
 }
 
 .card-syllable {
-  font-size: 52px;
+  font-size: 50px;
   color: #ff4365;
   text-shadow: 2px 2px 0px #ffffff, 3px 3px 2px rgba(0, 0, 0, 0.2);
   letter-spacing: 1px;
@@ -119,11 +170,11 @@ body {
 }
 
 /* ==========================================
-   3. PANEL INTERACTIVO DE MICRÓFONO
+   2. PANEL INTERACTIVO DE MICRÓFONO
    ========================================== */
 .interactive-panel {
   position: absolute;
-  top: 295px;
+  top: 415px;
   left: 50%;
   transform: translateX(-50%);
   width: 650px;
@@ -157,7 +208,7 @@ body {
 }
 
 #resultado {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: bold;
   color: #333;
   text-align: center;
@@ -165,14 +216,14 @@ body {
 }
 
 /* ==========================================
-   4. GRID DE PALABRAS EN EL CUADRO INFERIOR
+   3. CUADRÍCULA DE PALABRAS
    ========================================== */
 .words-grid {
   position: absolute;
-  top: 385px;
-  left: 55px;
-  width: 658px;
-  height: 470px;
+  top: 462px;
+  left: 45px;
+  width: 678px;
+  height: 440px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -184,7 +235,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 74px;
+  font-size: 72px;
   letter-spacing: -0.5px;
   cursor: pointer;
   border-radius: 16px;
@@ -210,13 +261,4 @@ body {
 .text-black {
   color: #1c1c1e;
   text-shadow: 1px 2px 0px #ffffff, 2px 3px 3px rgba(0, 0, 0, 0.25);
-}
-
-/* Pie de página */
-.footer-tag {
-  position: absolute;
-  bottom: 15px;
-  left: 50px;
-  font-size: 16px;
-  color: #a0a0a0;
 }

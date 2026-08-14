@@ -17,43 +17,66 @@
 
   <div class="template-container">
 
-    <!-- IMAGEN DE FONDO -->
-    <img src="images/fondo.png" alt="Fondo" class="bg-image">
+    <!-- IMAGEN DE FONDO NUEVA -->
+    <img src="images/fondo4.png" alt="Fondo" class="bg-image">
 
-    <!-- 1. TÍTULO PRINCIPAL -->
-    <h1 class="title-main">Lección 1: Familia de la <span class="highlight">M</span></h1>
+    <!-- 0. TÍTULO SUPERIOR PRINCIPAL -->
+    <h1 class="title-main">LECCIONES DE LECTURA: LA LETRA 'M'</h1>
 
-    <!-- 2. TARJETAS DE SÍLABAS CON ANIMACIÓN DE IMÁGENES -->
+    <!-- MASCOTA (CAPIBARA EN LA REPISA) -->
+    <img src="images/capibara.png" alt="Mascota Capibara" class="mascot-img">
+
+    <!-- MENÚ SUPERIOR (SOBRE EL ESTANTE) -->
+    <div class="top-menu-container">
+      <div class="nav-btn" onclick="accionMenu('menu')">
+        <img src="images/Libro.png" alt="Menú">
+        <span>MENÚ</span>
+      </div>
+      <div class="nav-btn" onclick="accionMenu('anterior')">
+        <img src="images/icon_anterior.png" alt="Anterior">
+        <span>ANTERIOR</span>
+      </div>
+      <div class="nav-btn" onclick="accionMenu('siguiente')">
+        <img src="images/icon_siguiente.png" alt="Siguiente">
+        <span>SIGUIENTE</span>
+      </div>
+      <div class="nav-btn" onclick="accionMenu('ayuda')">
+        <img src="images/icon_ayuda.png" alt="Ayuda">
+        <span>AYUDA</span>
+      </div>
+    </div>
+
+    <!-- 1. TARJETAS DE SÍLABAS (MA - ME - MI - MO - MU) -->
     <div class="cards-container">
       <div class="card-box" onclick="animarYHablar(this, 'mano', 'ma')">
-        <img src="images/mano1.png" alt="Mano" id="img-mano">
+        <img src="images/mano1.png" alt="Mano">
         <span class="card-syllable">MA</span>
       </div>
       <div class="card-box" onclick="animarYHablar(this, 'mesa', 'me')">
-        <img src="images/mesa1.png" alt="Mesa" id="img-mesa">
+        <img src="images/mesa1.png" alt="Mesa">
         <span class="card-syllable">ME</span>
       </div>
       <div class="card-box" onclick="animarYHablar(this, 'microfono', 'mi')">
-        <img src="images/microfono1.png" alt="Micrófono" id="img-microfono">
+        <img src="images/microfono1.png" alt="Micrófono">
         <span class="card-syllable">MI</span>
       </div>
       <div class="card-box" onclick="animarYHablar(this, 'mono', 'mo')">
-        <img src="images/mono1.png" alt="Mono" id="img-mono">
+        <img src="images/mono1.png" alt="Mono">
         <span class="card-syllable">MO</span>
       </div>
       <div class="card-box" onclick="animarYHablar(this, 'muneca', 'mu')">
-        <img src="images/muneca1.png" alt="Muñeca" id="img-muneca">
+        <img src="images/muneca1.png" alt="Muñeca">
         <span class="card-syllable">MU</span>
       </div>
     </div>
 
-    <!-- 3. PANEL INTERACTIVO DE MICRÓFONO Y MENSAJES -->
+    <!-- 2. PANEL INTERACTIVO DE MICRÓFONO -->
     <div class="interactive-panel">
       <button class="btn-mic" onclick="escuchar()">🎙️ Leer Palabra Seleccionada</button>
       <div id="resultado">Haz clic en una palabra y presiona el botón.</div>
     </div>
 
-    <!-- 4. RECUADROS DE PALABRAS INTERACTIVAS -->
+    <!-- 3. CUADRÍCULA DE PALABRAS -->
     <div class="words-grid">
       <div class="word-cell" onclick="seleccionarPalabra(this, 'mamá')">
         <span class="text-red">ma</span><span class="text-black">má</span>
@@ -96,9 +119,6 @@
       </div>
     </div>
 
-    <!-- 5. PIE DE PÁGINA -->
-    <div class="footer-tag">Proyecto version 0.1</div>
-
   </div>
 
   <!-- SCRIPT DE VOZ Y ANIMACIÓN -->
@@ -107,7 +127,7 @@
     let elementoActual = null;
     let recognition = null;
     let timeoutId = null;
-    let animacionesActivas = {}; // Para evitar superposición de animaciones
+    let animacionesActivas = {};
 
     function limpiarAcentos(texto) {
       return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -121,32 +141,30 @@
       window.speechSynthesis.speak(mensaje);
     }
 
-    // FUNCIÓN PARA ANIMAR SECUENCIA DE 5 IMÁGENES + VOZ
-    function animarYHablar(elementoCard, nombreBase, silaba) {
-      // Reproducir voz
-      hablar(silaba);
+    function accionMenu(opcion) {
+      hablar(opcion);
+      console.log(`Navegación: ${opcion}`);
+    }
 
+    function animarYHablar(elementoCard, nombreBase, silaba) {
+      hablar(silaba);
       const imgElement = elementoCard.querySelector('img');
 
-      // Si ya hay una animación corriendo en esta imagen, la limpiamos
       if (animacionesActivas[nombreBase]) {
         clearInterval(animacionesActivas[nombreBase]);
       }
 
-      // Añadir clase CSS para efecto visual
       imgElement.classList.add('animando');
 
       let frameActual = 1;
       const totalFrames = 5;
-      const velocidadMs = 300; // Tiempo en ms entre cada foto (100ms = rápido y fluido)
+      const velocidadMs = 100;
 
       animacionesActivas[nombreBase] = setInterval(() => {
         frameActual++;
-        
         if (frameActual <= totalFrames) {
           imgElement.src = `images/${nombreBase}${frameActual}.png`;
         } else {
-          // Regresar a la imagen inicial y detener intervalo
           imgElement.src = `images/${nombreBase}1.png`;
           imgElement.classList.remove('animando');
           clearInterval(animacionesActivas[nombreBase]);
@@ -173,9 +191,7 @@
     function escuchar() {
       const $resultado = document.getElementById('resultado');
 
-      if (recognition) {
-        recognition.abort();
-      }
+      if (recognition) recognition.abort();
 
       if (!palabraActual) {
         $resultado.innerText = "⚠️ Haz clic en una palabra antes de leer.";
