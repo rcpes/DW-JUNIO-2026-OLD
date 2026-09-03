@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprendiendo a Leer con Capi - Letra M</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="barra-superior">
+<a href="menu.html" class="marca"><span class="marca-icono">🌱</span><span><small>MI JARDÍN</small><strong>DE LECTURA</strong></span></a>
+<div class="titulo-barra">📚 <h1>APRENDE LA LETRA <b>'M'</b></h1> ✨</div>
+<nav class="navegacion">
+<a href="inicio.html" class="nav-boton">🏠<small>INICIO</small></a>
+<a href="menu.html" class="nav-boton">📖<small>LECCIONES</small></a>
+<button class="nav-boton" id="btnAyuda">🛟<small>AYUDA</small></button>
+</nav>
+</header>
+
+<main class="leccion">
+<section class="encabezado-leccion">
+<h2>🌱 La familia de la letra <span>M</span> 🌱</h2>
+<p>Escucha, practica y luego repite las palabras con Capi.</p>
+</section>
+
+<section class="panel-silabas">
+<button class="tarjeta-silaba" data-silaba="ma" data-palabra="mano"><i>✋</i><strong>MA</strong><small>MANO</small></button>
+<button class="tarjeta-silaba" data-silaba="me" data-palabra="mesa"><i>🪑</i><strong>ME</strong><small>MESA</small></button>
+<button class="tarjeta-silaba" data-silaba="mi" data-palabra="micrófono"><i>🎤</i><strong>MI</strong><small>MICRÓFONO</small></button>
+<button class="tarjeta-silaba" data-silaba="mo" data-palabra="mono"><i>🐒</i><strong>MO</strong><small>MONO</small></button>
+<button class="tarjeta-silaba" data-silaba="mu" data-palabra="muñeca"><i>🪆</i><strong>MU</strong><small>MUÑECA</small></button>
+</section>
+
+<section class="panel-voz">
+<div class="instruccion"><span class="capi-mini">🦫</span><div><strong id="tituloVoz">¡Hola! Soy Capi</strong><p id="resultado">Haz clic en una palabra. Yo la leeré y después tú puedes repetirla.</p></div></div>
+<button class="boton-microfono" id="btnMicrofono"><span>🎙️</span><span>REPETIR PALABRA</span></button>
+</section>
+
+<section class="panel-palabras">
+<div class="panel-titulo">🔊 <h3>ELIGE Y ESCUCHA UNA PALABRA</h3> 🔊</div>
+<div class="palabras-grid">
+<button class="palabra" data-palabra="mamá"><b>ma</b>má</button>
+<button class="palabra" data-palabra="ama">a<b>ma</b></button>
+<button class="palabra" data-palabra="mami"><b>ma</b>mi</button>
+<button class="palabra" data-palabra="amo">a<b>mo</b></button>
+<button class="palabra" data-palabra="mima"><b>mi</b>ma</button>
+<button class="palabra" data-palabra="eme">e<b>me</b></button>
+<button class="palabra" data-palabra="memo"><b>me</b>mo</button>
+<button class="palabra" data-palabra="mimo"><b>mi</b>mo</button>
+<button class="palabra" data-palabra="mío"><b>mí</b>o</button>
+<button class="palabra" data-palabra="ame">a<b>me</b></button>
+<button class="palabra" data-palabra="má"><b>má</b></button>
+<button class="palabra" data-palabra="música"><b>mú</b>sica</button>
+</div>
+</section>
+</main>
+
+<div class="modal" id="modalAyuda"><div class="modal-contenido">
+<button class="cerrar-modal" data-cerrar>×</button>
+<div class="modal-emoji">🦫📚</div><h2>¡Capi te ayuda!</h2>
+<ol><li>👆 Pulsa una palabra para escucharla.</li><li>👂 Escúchala con atención.</li><li>🎙️ Pulsa el micrófono y repítela.</li><li>⭐ Capi comprobará si la dijiste correctamente.</li></ol>
+<button class="boton-entendido" data-cerrar>¡ENTENDIDO!</button>
+</div></div>
+<script src="js/main.js"></script>
+</body>
+</html>

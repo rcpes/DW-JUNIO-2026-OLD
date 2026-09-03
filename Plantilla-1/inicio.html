@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprendiendo a Leer con Capi</title>
+<link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+
+<main class="app">
+    <section class="pantalla-inicio">
+
+        <!-- Botones superiores -->
+        <nav aria-label="Menú superior">
+            <a href="acerca-de.html" class="zona boton-acerca" aria-label="Acerca de"></a>
+            <button type="button" class="zona boton-ayuda" id="abrirAyuda" aria-label="Ayuda"></button>
+            <a href="salir.html" class="zona boton-salir" aria-label="Salir"></a>
+        </nav>
+
+        <!-- Botones principales -->
+        <a href="menu.html" class="zona boton-viaje" aria-label="Nuevo viaje"></a>
+        <a href="menu.html" class="zona boton-jugar" aria-label="Jugar"></a>
+        <button type="button" class="zona boton-opciones" id="abrirOpciones" aria-label="Opciones"></button>
+
+        <div class="credito">Inspirado en <strong>Lecciones de Lectura: La Letra M</strong></div>
+    </section>
+</main>
+
+<!-- Ventana de ayuda -->
+<div class="modal" id="modalAyuda">
+    <div class="modal-contenido">
+        <button class="cerrar" data-cerrar="modalAyuda">×</button>
+        <div class="modal-icono">❓</div>
+        <h2>¿Necesitas ayuda?</h2>
+        <p>Presiona <strong>JUGAR</strong> para comenzar tu aventura.</p>
+        <div class="pasos">
+            <p>📚 Aprende las letras</p>
+            <p>🔤 Practica las sílabas</p>
+            <p>🎮 Juega y aprende</p>
+        </div>
+        <button class="boton-modal" data-cerrar="modalAyuda">¡ENTENDIDO!</button>
+    </div>
+</div>
+
+<!-- Ventana de opciones -->
+<div class="modal" id="modalOpciones">
+    <div class="modal-contenido">
+        <button class="cerrar" data-cerrar="modalOpciones">×</button>
+        <div class="modal-icono">⚙️</div>
+        <h2>Opciones</h2>
+
+        <label class="control"><span>🔊 Sonido</span><input type="checkbox" checked></label>
+        <label class="control"><span>✨ Animaciones</span><input type="checkbox" checked></label>
+
+        <button class="boton-modal" data-cerrar="modalOpciones">GUARDAR</button>
+    </div>
+</div>
+
+<script>
+const modalAyuda = document.getElementById("modalAyuda");
+const modalOpciones = document.getElementById("modalOpciones");
+
+document.getElementById("abrirAyuda").addEventListener("click", () => {
+    modalAyuda.classList.add("mostrar");
+});
+
+document.getElementById("abrirOpciones").addEventListener("click", () => {
+    modalOpciones.classList.add("mostrar");
+});
+
+document.querySelectorAll("[data-cerrar]").forEach(boton => {
+    boton.addEventListener("click", () => {
+        document.getElementById(boton.dataset.cerrar).classList.remove("mostrar");
+    });
+});
+
+document.querySelectorAll(".modal").forEach(modal => {
+    modal.addEventListener("click", evento => {
+        if (evento.target === modal) modal.classList.remove("mostrar");
+    });
+});
+</script>
+
+</body>
+</html>

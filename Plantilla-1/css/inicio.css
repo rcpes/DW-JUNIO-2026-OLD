@@ -1,0 +1,234 @@
+/* =========================================
+   APRENDIENDO A LEER CON CAPI
+   INICIO INTERACTIVO
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde: #55a858;
+    --verde-oscuro: #28733e;
+    --texto: #4c4541;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #ead8c3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+    width: min(100vw, 900px);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+/* La imagen entregada se usa como fondo para conservar
+   exactamente las ilustraciones originales de Capi, libros,
+   oveja, letras y mariposa. */
+.pantalla-inicio {
+    width: min(100vw, 900px);
+    aspect-ratio: 1 / 1;
+    position: relative;
+    background: url("../img/inicio-capi.png") center / 100% 100% no-repeat;
+    box-shadow: 0 10px 40px rgba(84, 52, 30, 0.22);
+}
+
+/* Zonas HTML transparentes y funcionales sobre los botones */
+.zona {
+    position: absolute;
+    display: block;
+    border: 0;
+    border-radius: 16px;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.zona::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: inherit;
+    border: 3px solid transparent;
+    transition: 0.2s ease;
+}
+
+.zona:hover::after,
+.zona:focus-visible::after {
+    border-color: rgba(255,255,255,0.95);
+    box-shadow: 0 0 0 3px rgba(255,207,94,0.45), 0 0 20px rgba(255,255,255,0.8);
+}
+
+.zona:active {
+    transform: scale(0.98);
+}
+
+/* Menú superior */
+.boton-acerca {
+    left: 29.5%;
+    top: 3.2%;
+    width: 13.5%;
+    height: 8.3%;
+}
+
+.boton-ayuda {
+    left: 44%;
+    top: 3.2%;
+    width: 11.8%;
+    height: 8.3%;
+}
+
+.boton-salir {
+    left: 57.2%;
+    top: 3.2%;
+    width: 12.5%;
+    height: 8.3%;
+}
+
+/* Botones centrales */
+.boton-viaje {
+    left: 49.3%;
+    top: 42.4%;
+    width: 36.3%;
+    height: 12.6%;
+}
+
+.boton-jugar {
+    left: 49.3%;
+    top: 57.2%;
+    width: 36.3%;
+    height: 13.4%;
+}
+
+.boton-opciones {
+    left: 49.3%;
+    top: 73.4%;
+    width: 36.3%;
+    height: 11.5%;
+}
+
+.credito {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.7%;
+    text-align: center;
+    color: #4d4038;
+    font-size: clamp(7px, 1.05vw, 11px);
+}
+
+/* Modales */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    place-items: center;
+    padding: 20px;
+    background: rgba(53,40,32,0.55);
+}
+
+.modal.mostrar {
+    display: grid;
+}
+
+.modal-contenido {
+    width: min(440px, 94vw);
+    padding: 30px;
+    position: relative;
+    text-align: center;
+    background: #fff8ec;
+    border: 5px solid white;
+    border-radius: 30px;
+    box-shadow: 0 8px 0 #e8c9ab, 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.modal-icono {
+    font-size: 3.5rem;
+    margin-bottom: 8px;
+}
+
+.modal-contenido h2 {
+    margin-bottom: 12px;
+    color: var(--texto);
+    font-size: 1.8rem;
+}
+
+.modal-contenido > p {
+    color: #70635b;
+    line-height: 1.5;
+}
+
+.pasos {
+    margin: 18px 0;
+    padding: 14px;
+    border-radius: 18px;
+    background: #fff0df;
+}
+
+.pasos p {
+    margin: 8px 0;
+}
+
+.cerrar {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: 0;
+    border-radius: 50%;
+    background: #ef765d;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.control {
+    margin: 12px 0;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    background: #fff0df;
+    color: #5c514a;
+    font-weight: bold;
+}
+
+.control input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--verde);
+}
+
+.boton-modal {
+    margin-top: 10px;
+    padding: 13px 25px;
+    border: 0;
+    border-radius: 16px;
+    background: var(--verde);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 var(--verde-oscuro);
+}
+
+@media (max-width: 600px) {
+    .pantalla-inicio {
+        width: 100vw;
+    }
+
+    .modal-contenido {
+        padding: 25px 18px;
+    }
+}

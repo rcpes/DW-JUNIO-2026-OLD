@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Jardín de Lectura</title>
+
+    <!-- Fuente redondeada y amigable para niños -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABECERA / MENÚ SUPERIOR
+    ========================== -->
+    <header class="cabecera">
+
+        <a href="index.html" class="logo" aria-label="Ir al menú principal">
+            <span class="logo-icono">🌱</span>
+            <div>
+                <span class="logo-pequeno">MI JARDÍN</span>
+                <strong>DE LECTURA</strong>
+            </div>
+        </a>
+
+        <div class="titulo-cabecera">
+            <span>📚</span>
+            <h1>ELIGE UNA LECCIÓN</h1>
+            <span>✨</span>
+        </div>
+
+        <nav class="menu-superior" aria-label="Navegación principal">
+            <a href="index.html" class="boton-nav activo">
+                <span>🏠</span>
+                <small>MENÚ</small>
+            </a>
+
+            <a href="#lecciones" class="boton-nav">
+                <span>📖</span>
+                <small>LECCIONES</small>
+            </a>
+
+            <button class="boton-nav" id="btnAyuda" type="button">
+                <span>🛟</span>
+                <small>AYUDA</small>
+            </button>
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         BARRA DE NAVEGACIÓN
+    ========================== -->
+    <section class="barra-navegacion">
+        <a href="#" class="flecha disabled" aria-disabled="true">
+            <span>◀</span> ANTERIOR
+        </a>
+
+        <div class="progreso">
+            <span class="flor">🌼</span>
+            <span>¡EMPEZAMOS A LEER!</span>
+            <span class="flor">🌼</span>
+        </div>
+
+        <a href="#lecciones" class="flecha">
+            SIGUIENTE <span>▶</span>
+        </a>
+    </section>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
+    <main>
+
+        <section class="bienvenida">
+            <div class="personaje">🐝</div>
+
+            <div class="texto-bienvenida">
+                <p class="etiqueta">🌈 JUEGO DE LECTURA INFANTIL 🌈</p>
+                <h2>¡Hola, pequeño lector!</h2>
+                <p>
+                    Elige una letra y aprende jugando. Escucha, observa las sílabas,
+                    lee palabras y descubre nuevas aventuras.
+                </p>
+            </div>
+
+            <div class="personaje personaje-derecha">🐞</div>
+        </section>
+
+
+        <!-- =========================
+             TARJETAS DE LECCIONES
+        ========================== -->
+        <section class="seccion-lecciones" id="lecciones">
+
+            <div class="titulo-seccion">
+                <span class="hoja">🍃</span>
+                <div>
+                    <h2>Mis primeras letras</h2>
+                    <p>Comienza tu aventura y selecciona una lección</p>
+                </div>
+                <span class="hoja">🍃</span>
+            </div>
+
+
+            <div class="rejilla-lecciones">
+
+                <!-- LECCIÓN M -->
+                <article class="tarjeta-leccion leccion-m">
+                    <div class="tarjeta-arriba">
+                        <span class="numero">1</span>
+                        <span class="estrella">⭐</span>
+                    </div>
+
+                    <div class="ilustracion">
+                        <div class="nube">☁️</div>
+                        <div class="letra-grande">M</div>
+                        <div class="animal">🐒</div>
+                    </div>
+
+                    <h3>La letra <span>M</span></h3>
+
+                    <div class="silabas">
+                        <span>MA</span>
+                        <span>ME</span>
+                        <span>MI</span>
+                        <span>MO</span>
+                        <span>MU</span>
+                    </div>
+
+                    <p>Aprende las sílabas y forma tus primeras palabras.</p>
+
+                    <!-- Cambia leccion-m.html por el nombre real de tu actividad -->
+                    <a href="leccion-m.html" class="boton-jugar">
+                        <span>▶</span> JUGAR
+                    </a>
+                </article>
+
+
+                <!-- LECCIÓN P -->
+                <article class="tarjeta-leccion leccion-p">
+                    <div class="tarjeta-arriba">
+                        <span class="numero">2</span>
+                        <span class="estrella">⭐</span>
+                    </div>
+
+                    <div class="ilustracion">
+                        <div class="nube">☁️</div>
+                        <div class="letra-grande">P</div>
+                        <div class="animal">🦆</div>
+                    </div>
+
+                    <h3>La letra <span>P</span></h3>
+
+                    <div class="silabas">
+                        <span>PA</span>
+                        <span>PE</span>
+                        <span>PI</span>
+                        <span>PO</span>
+                        <span>PU</span>
+                    </div>
+
+                    <p>Descubre palabras nuevas y sigue leyendo.</p>
+
+                    <a href="leccion-p.html" class="boton-jugar">
+                        <span>▶</span> JUGAR
+                    </a>
+                </article>
+
+
+                <!-- LECCIÓN L -->
+                <article class="tarjeta-leccion leccion-l">
+                    <div class="tarjeta-arriba">
+                        <span class="numero">3</span>
+                        <span class="estrella">⭐</span>
+                    </div>
+
+                    <div class="ilustracion">
+                        <div class="nube">☁️</div>
+                        <div class="letra-grande">L</div>
+                        <div class="animal">🦁</div>
+                    </div>
+
+                    <h3>La letra <span>L</span></h3>
+
+                    <div class="silabas">
+                        <span>LA</span>
+                        <span>LE</span>
+                        <span>LI</span>
+                        <span>LO</span>
+                        <span>LU</span>
+                    </div>
+
+                    <p>Lee, escucha y practica jugando con las sílabas.</p>
+
+                    <a href="leccion-l.html" class="boton-jugar">
+                        <span>▶</span> JUGAR
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             PRÓXIMAS LECCIONES
+        ========================== -->
+        <section class="proximamente">
+            <div class="cartel-proximamente">
+                <span>🔐</span>
+                <div>
+                    <strong>¡Pronto habrá más letras!</strong>
+                    <p>Cada nueva lección será una aventura para aprender a leer.</p>
+                </div>
+                <span>🌈</span>
+            </div>
+
+            <div class="mini-lecciones">
+                <div>🅂<small>S</small></div>
+                <div>🅃<small>T</small></div>
+                <div>🄽<small>N</small></div>
+                <div>🄳<small>D</small></div>
+                <div>🄵<small>F</small></div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
+    <footer>
+        <span>🌻</span>
+        <p>Mi Jardín de Lectura · Aprende, juega y sonríe</p>
+        <span>🌻</span>
+    </footer>
+
+
+    <!-- VENTANA DE AYUDA -->
+    <div class="modal" id="modalAyuda" aria-hidden="true">
+        <div class="modal-contenido">
+            <button class="cerrar-modal" id="cerrarAyuda" type="button" aria-label="Cerrar">×</button>
+            <div class="modal-icono">🛟</div>
+            <h2>¿Cómo jugar?</h2>
+            <ol>
+                <li>👆 Elige una letra.</li>
+                <li>🔊 Escucha y repite sus sílabas.</li>
+                <li>📖 Lee las palabras.</li>
+                <li>⭐ Completa los juegos y aprende.</li>
+            </ol>
+            <button class="boton-entendido" id="entendido" type="button">¡ENTENDIDO!</button>
+        </div>
+    </div>
+
+    <script>
+        const btnAyuda = document.getElementById("btnAyuda");
+        const modalAyuda = document.getElementById("modalAyuda");
+        const cerrarAyuda = document.getElementById("cerrarAyuda");
+        const entendido = document.getElementById("entendido");
+
+        function abrirAyuda() {
+            modalAyuda.classList.add("mostrar");
+            modalAyuda.setAttribute("aria-hidden", "false");
+        }
+
+        function cerrarModal() {
+            modalAyuda.classList.remove("mostrar");
+            modalAyuda.setAttribute("aria-hidden", "true");
+        }
+
+        btnAyuda.addEventListener("click", abrirAyuda);
+        cerrarAyuda.addEventListener("click", cerrarModal);
+        entendido.addEventListener("click", cerrarModal);
+
+        modalAyuda.addEventListener("click", function(evento) {
+            if (evento.target === modalAyuda) {
+                cerrarModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
