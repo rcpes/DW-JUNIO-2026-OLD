@@ -94,6 +94,7 @@ btnEliminar.addEventListener('click', function() {
         btnEliminar.disabled = true;
         btnEliminar.textContent = 'Elemento ya eliminado';
     }
+    
 });
 
 
