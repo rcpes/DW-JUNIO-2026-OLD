@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Nivel 3: Manipulación del DOM</title>
+    <!-- Vinculamos la hoja de estilos externa -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Manipulación del DOM en JavaScript 🖱️</h1>
+        <p>A diferencia de los niveles anteriores, ¡aquí interactúas directamente con la pantalla!</p>
+    </header>
+
+    <main class="instrucciones">
+        <h2>Nivel 3: Manipulación Básica del DOM</h2>
+
+        <!-- PARTE 1 -->
+        <div class="paso">
+            <h3><span class="badge">Parte 1</span> Cambiar texto de un &lt;p&gt;</h3>
+            <p id="parrafo-texto">Texto original antes de interactuar con JS...</p>
+            <button id="btn-cambiar-texto">Cambiar Texto</button>
+        </div>
+
+
+        <!-- PARTE 1 otra Ejercicio Manual -->
+        <div class="paso">
+            <h3><span class="badge">Parte 1 otro Ejercicio Manual</span> Cambiar texto de un &lt;p&gt;</h3>
+            <p id="parrafo-texto2">otro ejercicio Texto original antes de interactuar con JS...</p>
+            <button id="btn-cambiar-texto2">Cambiar Texto</button>
+        </div>
+
+
+
+        <!-- PARTE 2 -->
+        <div class="paso">
+            <h3><span class="badge">Parte 2</span> Añadir un &lt;li&gt; a un &lt;ul&gt;</h3>
+            <button id="btn-agregar-item">Agregar Elemento</button>
+            <ul id="mi-lista">
+                <li>Item original #1</li>
+            </ul>
+        </div>
+
+
+
+
+        <!-- PARTE 3 -->
+        <div class="paso">
+            <h3><span class="badge">Parte 3</span> Cambiar color al hacer clic</h3>
+            <p>Haz clic en el siguiente recuadro para cambiar su color:</p>
+            <div id="caja-color" class="caja-interactiva">¡Hazme clic para cambiar mi color!</div>
+
+            <div id="caja-color2" class="caja-interactiva">¡Hazme clic para cambiar mi color!</div>
+        </div>
+
+
+
+
+        <!-- PARTE 4 -->
+        <div class="paso">
+            <h3><span class="badge">Parte 4</span> Eliminar elemento del DOM</h3>
+            <div id="elemento-eliminar" class="alerta-eliminar">
+                ❌ Este mensaje desaparecerá si pulsas el botón.
+            </div>
+            <button id="btn-eliminar" class="btn-danger">Eliminar Elemento</button>
+        </div>
+
+        <!-- PARTE 5 -->
+        <div class="paso">
+            <h3><span class="badge">Parte 5</span> Contador de Clics</h3>
+            <p>Total de clics: <strong id="contador-numero" class="numero-contador">0</strong></p>
+            <button id="btn-contar">¡Contar Clic!</button>
+        </div>
+    </main>
+
+    <!-- JS al final para asegurar la carga completa del HTML -->
+    <script src="js/Nivel3.js"></script>
+
+</body>
+
+</html>

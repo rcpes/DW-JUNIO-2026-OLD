@@ -1,0 +1,120 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px;
+    background-color: #f0f2f5;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    border-left: 6px solid #f59e0b; /* Ámbar/Naranja moderno */
+}
+
+.header h1 {
+    margin: 0 0 10px 0;
+    color: #1e293b;
+    font-size: 1.8rem;
+}
+
+.header p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.instrucciones {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.instrucciones h2 {
+    margin-top: 0;
+    color: #d97706;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.paso {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.paso h3 {
+    margin: 0 0 10px 0;
+    color: #0f172a;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.badge {
+    background-color: #fef3c7;
+    color: #b45309;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+/* Estilos de botones e interactividad */
+button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #4338ca;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+.caja-interactiva {
+    padding: 10px;
+    background-color: #e2e8f0;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    font-weight: bold;
+}
+
+.alerta-eliminar {
+    margin-bottom: 10px;
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.numero-contador {
+    font-size: 1.2rem;
+    color: #4f46e5;
+}
+
+ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
